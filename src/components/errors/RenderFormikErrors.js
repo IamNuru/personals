@@ -25,7 +25,7 @@ const RenderFormikErrors = ({ formik }) => {
                             <ReportIcon fontSize="small" />
                         </ListItemIcon>
                         <ListItemText disableTypography
-                            sx={{ margin: 0, fontWeight: 'lighter', fontSize: '0.85rem', lineHeight: 1.5 }}
+                            sx={{ margin: 0, fontWeight: 'lighter', fontSize: '1rem', lineHeight: 1.5 }}
                             primary={formik.errors[value]}
                         />
                     </ListItem>

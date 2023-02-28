@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
+import ListItemText from '@mui/material/ListItemText'
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -48,21 +48,21 @@ const Navbar = (props) => {
                 <Link to="/" style={linkStyle}>
                     <ListItem disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary='Home' />
+                            <ListItemText disableTypography sx={{fontSize:'1.8rem'}} primary='Home' />
                         </ListItemButton>
                     </ListItem>
                 </Link>
                 <Link to="/personals" style={linkStyle}>
                     <ListItem disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary='Personals' />
+                            <ListItemText disableTypography sx={{fontSize:'1.8rem'}} primary='Personals' />
                         </ListItemButton>
                     </ListItem>
                 </Link>
                 <Link to="/add-new-personal" style={linkStyle}>
                     <ListItem disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary='New Personal' />
+                            <ListItemText disableTypography sx={{fontSize:'1.8rem'}} primary='New Personal' />
                         </ListItemButton>
                     </ListItem>
                 </Link>
@@ -75,14 +75,14 @@ const Navbar = (props) => {
                             <Link to="/register" style={linkStyle}>
                                 <ListItem disablePadding>
                                     <ListItemButton sx={{ textAlign: 'center' }}>
-                                        <ListItemText primary='Register' />
+                                        <ListItemText disableTypography sx={{fontSize:'1.8rem'}} primary='Register' />
                                     </ListItemButton>
                                 </ListItem>
                             </Link>
                             <Link to="/login" style={linkStyle}>
                                 <ListItem disablePadding>
                                     <ListItemButton sx={{ textAlign: 'center' }}>
-                                        <ListItemText primary='Login' />
+                                        <ListItemText disableTypography sx={{fontSize:'1.8rem'}} primary='Login' />
                                     </ListItemButton>
                                 </ListItem>
                             </Link>
