@@ -4,7 +4,7 @@ import { Box, Typography } from '@mui/material'
 const Home = () => {
   return (
     <Box>
-      <Typography variant='h4' sx={{ textAlign: 'center' }}> Where does it come from? </Typography>
+      <Typography variant='h4' sx={{ textAlign: 'center', fontWeight:600, textDecoration:'underline' }}> Where does it come from? </Typography>
       <Typography sx={{ mb: 2, lineHeight: 1.7, fontSize:'1.4rem', mx:{xs:2} }}>
         Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
       </Typography>
@@ -17,7 +17,7 @@ const Home = () => {
         The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
       </Typography>
 
-      <Typography variant='h4' sx={{mt:4}}> Where can I get some?</Typography>
+      <Typography variant='h4' sx={{mt:4, textAlign:'center', fontWeight:600, textDecoration:'underline'}}> Where can I get some?</Typography>
       <Typography sx={{ mb: 2, lineHeight: 1.7, fontSize:'1.4rem', mx:{xs:2} }}>
         There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. 
         </Typography>
