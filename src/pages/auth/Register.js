@@ -44,9 +44,6 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
-  const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
-  const [type, setType] = useState(false)
-  const handleCheck = e => setType(!type)
 
 
 
@@ -69,10 +66,6 @@ const Register = () => {
         "Last Name must be more than 2 characters."
       ),
       email: Yup.string().email().required("Email is required."),
-      phoneNumber: Yup.string()
-        .min(9, 'Phone Number should not be less than 9')
-        .max(16, 'Phone Number should not be more than 16')
-        .matches(phoneRegExp, 'Phone number is not valid'),
       password: Yup.string()
         .required("Password is Required.")
         .min(6, "Password is too short - should be 6 chars minimum."),

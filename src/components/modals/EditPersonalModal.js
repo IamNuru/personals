@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import Button from '@mui/joy/Button';
 import Modal from '@mui/joy/Modal';
@@ -14,14 +14,14 @@ import isEmptyObject from '../../utils/isEmptyObject';
 import '../../styles/personal-form.css'
 import { useDispatch } from 'react-redux';
 import { updatePersonal } from '../../redux/actions/personalAction';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 
 const EditPersonalModal = ({ open, setOpen, personal }) => {
 
     //redux
     const dispatch = useDispatch();
 
-    const navigate = useNavigate()
+    //const navigate = useNavigate()
 
 
     const formik = useFormik({

@@ -7,7 +7,7 @@ import "../styles/personalStyle.css"
 import EditPersonalModal from './modals/EditPersonalModal'
 import DeletePersonalModal from './modals/DeletePersonalModal'
 import CustomizedSnackbar from './CustomizedSnackbar'
-import { useDispatch, useSelector } from 'react-redux'
+//import { useDispatch, useSelector } from 'react-redux'
 import SharePopover from './SharePopover'
 
 const Personal = ({ personal }) => {
@@ -23,7 +23,7 @@ const Personal = ({ personal }) => {
     const sharePopoverId = sharePopoverOpen ? 'simple-popover' : undefined;
 
     //redux
-    const dispatch = useDispatch();
+    //const dispatch = useDispatch();
 
 
 
