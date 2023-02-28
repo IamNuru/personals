@@ -13,6 +13,7 @@ import isEmptyObject from "../utils/isEmptyObject";
 import { addPersonal } from "../redux/actions/personalAction";
 import CustomizedSnackbar from "../components/CustomizedSnackbar";
 import { useState } from "react";
+import RenderFormikErrors from "../components/errors/RenderFormikErrors";
 
 const AddNewPersonal = () => {
     const [open, setOpen] = useState(false)
@@ -75,6 +76,16 @@ const AddNewPersonal = () => {
                         onBlur={formik.handleBlur}
                         value={formik.values.content}
                     />
+                    {
+                        //error messages
+                        formik.dirty ? <>
+                        {
+                            !formik.isValid ? <>
+                            <RenderFormikErrors formik={formik} />
+                            </> : null
+                        }
+                        </> : null
+                    }
                     <Button
                         color="primary"
                         variant="contained"

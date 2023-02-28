@@ -20,6 +20,7 @@ import Page from "../../components/Page.js"
 import { useDispatch, useSelector } from "react-redux";
 /*import { useLoginUserMutation } from "../../features/api/userApiService";*/
 import { login } from "../../redux/actions/authAction";
+import RenderFormikErrors from "../../components/errors/RenderFormikErrors";
 
 const Login = () => {
   const navigate = useNavigate()
@@ -68,12 +69,12 @@ const Login = () => {
 
 
   //redirect to home if logged in
-   useEffect(() => {
-     if (loggedIn) {
-       navigate(from)
-     }
-     // eslint-disable-next-line
-   }, [loggedIn])
+  useEffect(() => {
+    if (loggedIn) {
+      navigate(from)
+    }
+    // eslint-disable-next-line
+  }, [loggedIn])
 
 
 
@@ -82,9 +83,7 @@ const Login = () => {
   return (
     <Page title="Login" className="wrap-auth-ui">
       <form onSubmit={formik.handleSubmit}>
-        <Box
-          className="form-wrapper"
-        >
+        <Box className="form-wrapper">
           <Typography component="div" className="auth-ui-title">
             <PersonOutlineOutlinedIcon />
             <Typography variant="h6" component="h6">
@@ -128,6 +127,19 @@ const Login = () => {
               ),
             }}
           />
+
+          {
+            //error messages
+            formik.dirty ? <>
+              {
+                !formik.isValid ? <>
+                  <RenderFormikErrors formik={formik} />
+                </> : null
+              }
+            </> : null
+          }
+
+
           <Button
             color="primary"
             variant="contained"

@@ -1,10 +1,9 @@
 import React from 'react';
 
-import Button from '@mui/joy/Button';
 import Modal from '@mui/joy/Modal';
 import ModalDialog from '@mui/joy/ModalDialog';
 import Typography from '@mui/joy/Typography';
-import { Box, CircularProgress, TextField } from '@mui/material';
+import { Box, CircularProgress, TextField, Button } from '@mui/material';
 
 import { useFormik } from 'formik';
 import * as Yup from 'yup'
@@ -14,6 +13,7 @@ import isEmptyObject from '../../utils/isEmptyObject';
 import '../../styles/personal-form.css'
 import { useDispatch } from 'react-redux';
 import { updatePersonal } from '../../redux/actions/personalAction';
+import RenderFormikErrors from '../errors/RenderFormikErrors';
 //import { useNavigate } from 'react-router-dom';
 
 const EditPersonalModal = ({ open, setOpen, personal }) => {
@@ -54,7 +54,7 @@ const EditPersonalModal = ({ open, setOpen, personal }) => {
                     sx={{ maxWidth: 500 }}
                 >
                     <Typography component="h6"
-                        sx={{ my: 2, fontSize: '1.65rem', color: '#389BD9', textAlign: 'center' }}
+                        sx={{ mt: 2, mb:4, fontSize: '1.65rem', color: '#389BD9', textAlign: 'center' }}
                         className="personal-form-title">
                         Update Information
                     </Typography>
@@ -84,10 +84,20 @@ const EditPersonalModal = ({ open, setOpen, personal }) => {
                                 onBlur={formik.handleBlur}
                                 value={formik.values.content}
                             />
+
+                            {
+                                //error messages
+                                formik.dirty ? <>
+                                    {
+                                        !formik.isValid ? <>
+                                            <RenderFormikErrors formik={formik} />
+                                        </> : null
+                                    }
+                                </> : null
+                            }
                             <Button
-                                color="primary"
                                 variant="contained"
-                                disabled={!isEmptyObject(formik.errors) || formik.isSubmitting}
+                                disabled={!isEmptyObject(formik.errors)}
                                 type="submit"
                                 sx={{ backgroundColor: '#389BD9', color: 'white', fontSize: '1.2rem', fontWeight: 600, py: 1.2, mt: 6 }}
 

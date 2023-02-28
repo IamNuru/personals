@@ -59,7 +59,7 @@ const Personal = ({ personal }) => {
             <label className='label'>{personal.title}</label>
             <Card sx={{
                 minHeight: 30, py: 2, display: 'flex', alignItems: 'center',
-                justifyContent: 'space-between', mt:1.2,
+                justifyContent: 'space-between', mt:1.2, backgroundColor:'#daf9f69e'
             }} elevation={3}>
                 <Box sx={{ pl: 4, mt: 1 }}>
                     <Typography variant='h6' sx={{ fontSize: '1.2rem', color: '#0d0c0c', lineHeight: '1.2rem' }}>{personal.content}</Typography>

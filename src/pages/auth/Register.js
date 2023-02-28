@@ -23,6 +23,7 @@ import Page from "../../components/Page.js"
 /* import { useIsTabletScreen } from "../../hooks/useMediaScreens"; */
 import { useDispatch, useSelector } from "react-redux"
 import { register } from "../../redux/actions/authAction";
+import RenderFormikErrors from "../../components/errors/RenderFormikErrors";
 /* import { authActions } from "../../redux/slices/authSlice";
 import { useRegisterUserMutation } from "../../features/api/userApiService"; */
 
@@ -54,7 +55,6 @@ const Register = () => {
       firstName: "",
       lastName: "",
       email: "",
-      phoneNumber: "",
       password: "",
     },
     validationSchema: Yup.object({
@@ -96,12 +96,12 @@ const Register = () => {
 
 
   //redirect to home if logged in
-   useEffect(() => {
-     if (formik.isValid && loggedIn) {
-       navigate('/verify')
-     }
-     // eslint-disable-next-line
-   }, [formik.isValid, loggedIn])
+  useEffect(() => {
+    if (formik.isValid && loggedIn) {
+      navigate('/verify')
+    }
+    // eslint-disable-next-line
+  }, [formik.isValid, loggedIn])
 
 
 
@@ -196,6 +196,18 @@ const Register = () => {
               </Grid>
             </Grid>
           </Grid>
+
+          {
+            //error messages
+            formik.dirty ? <>
+              {
+                !formik.isValid ? <>
+                  <RenderFormikErrors formik={formik} />
+                </> : null
+              }
+            </> : null
+          }
+
           <Button
             color="primary"
             variant="contained"
