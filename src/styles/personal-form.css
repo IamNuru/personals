@@ -1,0 +1,33 @@
+.wrap-personal-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+.listItem {
+  color: #e31414;
+  font-size: 14px;
+  margin-top: 4px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.form-wrapper {
+  display: grid;
+  gap: 1rem;
+  max-width: 40rem;
+  align-items: center;
+  border: 1px solid gray;
+  padding: 1.2rem 4rem 3rem;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .wrap-personal-form {
+    margin-top: 2rem;
+  }
+  .form-wrapper{
+    padding: 1rem;
+  }
+}
