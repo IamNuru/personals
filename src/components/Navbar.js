@@ -68,7 +68,7 @@ const Navbar = (props) => {
                 </Link>
                 {
                     loggedIn ?
-                        <Button sx={{ mx: 1 }} variant="contained" onClick={logUserOut}>
+                        <Button sx={{ mt:4 }} variant="contained" onClick={logUserOut}>
                             Logout
                         </Button>
                         : <>

@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import OtpInput from 'react18-input-otp';
 import Page from '../components/Page'
 
@@ -9,15 +10,30 @@ import SecurityIcon from '@mui/icons-material/Security';
 const VerifyOtp = () => {
     const [otpVal, setOtpVal] = useState('')
     const [loading, setLoading] = useState(false)
+    const [success, setSuccess] = useState(false)
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         setOtpVal(e)
         if (e.length > 5) {
             setLoading(true)
+            setTimeout(() => {
+                setLoading(false)
+                setSuccess(true)
+            }, 3000);
         } else {
             setLoading(false)
         }
     }
+
+    useEffect(() => {
+      if(success){
+        navigate('/')
+      }
+      
+      //eslint-disable-next-line
+    }, [success])
+    
 
 
     return (
@@ -38,6 +54,7 @@ const VerifyOtp = () => {
                         separator={<span>-</span>}
                         isInputNum
                         shouldAutoFocus
+                        isDisabled={loading}
                     />
 
                     {
