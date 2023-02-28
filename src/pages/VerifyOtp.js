@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import OtpInput from 'react-otp-input';
+import OtpInput from 'react18-input-otp';
 import Page from '../components/Page'
 
 import { Box, Typography } from '@mui/material'
