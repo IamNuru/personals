@@ -16,6 +16,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../redux/actions/authAction';
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 
 const drawerWidth = 240;
 
@@ -39,7 +40,8 @@ const Navbar = (props) => {
     };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{backgroundColor:'#1976d2', color:'white', height:'100%'}}>
+        <Box onClick={handleDrawerToggle} 
+        sx={{backgroundColor:'#1976d2', color:'white', height:'100%', overflowX:'hidden'}}>
             <Typography variant="h6" sx={{ my: 2, textAlign:'center', fontSize:20, fontWeight:600 }}>
                 Personals
             </Typography>
@@ -68,7 +70,8 @@ const Navbar = (props) => {
                                 </ListItemButton>
                             </ListItem>
                         </Link>
-                        <Button sx={{ mt: 4, ml:2 }} variant="contained" onClick={logUserOut}>
+                        <Button sx={{ mt: 8, mx:2, width:'90%' }} variant="contained" 
+                        onClick={logUserOut} endIcon={<PowerSettingsNewIcon />}>
                             Logout
                         </Button>
                     </>
