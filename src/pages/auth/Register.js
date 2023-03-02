@@ -13,19 +13,13 @@ import {
 } from "@mui/material";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import "./styles/auth-ui.css";
+import styles from "./styles/auth_ui.module.css";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import isEmptyObject from "../../utils/isEmptyObject";
 import Page from "../../components/Page.js"
-/* import RenderServerErrorMessage from '../../components/RenderServerErrorMessage';
- */
-
-/* import { useIsTabletScreen } from "../../hooks/useMediaScreens"; */
 import { useDispatch, useSelector } from "react-redux"
 import { register } from "../../redux/actions/authAction";
 import RenderFormikErrors from "../../components/errors/RenderFormikErrors";
-/* import { authActions } from "../../redux/slices/authSlice";
-import { useRegisterUserMutation } from "../../features/api/userApiService"; */
 
 
 const Register = () => {
@@ -33,9 +27,6 @@ const Register = () => {
   const location = useLocation();
   const from = location.state ? location.state.from : "/";
 
-  /* const token = window.localStorage.getItem('token');
-  const [registerUser, { isLoading, isSuccess, data, isError, error }] = useRegisterUserMutation();
-  const authState = useSelector((state) => state.auth) */
 
 
   //redux
@@ -84,15 +75,6 @@ const Register = () => {
   }
 
 
-  //redirect to home if logged in
-  /* useEffect(() => {
-    if(token){
-      navigate(from)
-    }
-
-    // eslint-disable-next-line
-  }, []) */
-
 
 
   //redirect to home if logged in
@@ -106,11 +88,10 @@ const Register = () => {
 
 
   return (
-    <Page title="Create an Account" className="wrap-auth-ui">
-      {/* <SnackBar message="Successfully Register. redirecting..." open={authState.isAuthenticated ? true : false} /> */}
+    <Page title="Create an Account" className={styles.wrap_auth_ui}>
       <form onSubmit={formik.handleSubmit}>
-        <Box className="form-wrapper">
-          <Typography component="div" className="auth-ui-title">
+        <Box className={styles.form_wrapper}>
+          <Typography component="div" className={styles.auth_ui_title}>
             <PersonOutlineOutlinedIcon />
             <Typography variant="h6" component="h6">
               REGISTER
@@ -150,10 +131,7 @@ const Register = () => {
             </Grid>
 
 
-            <Grid container item spacing={1}>
-              <Grid item xs={12}>
-                <Typography sx={{ fontWeight: 600 }}>Login Credentials</Typography>
-              </Grid>
+            <Grid container item spacing={2}>
               <Grid item xs={12} md={6}>
                 <TextField
                   name="email"

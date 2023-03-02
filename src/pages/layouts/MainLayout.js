@@ -8,11 +8,8 @@ import Navbar from "../../components/Navbar";
 export default function MainLayout() {
   return (
     <Box>
-      <Box>
-
-        <Navbar />
-      </Box>
-      <Box sx={{ maxWidth: '64rem', mx: 'auto', mt:'1.8rem' }}>
+      <Navbar />
+      <Box sx={{ maxWidth: '64rem', mx: 'auto', mt: '1.8rem' }}>
         <Outlet />
       </Box>
       {/* <Footer /> */}

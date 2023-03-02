@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Box, Card, Typography, Popper, Fade } from '@mui/material'
+import { Box, Card, Typography } from '@mui/material'
 import { Delete, Share, ContentCopy } from '@mui/icons-material'
 import { Tooltip } from '@mui/joy'
 
@@ -7,7 +7,6 @@ import "../styles/personalStyle.css"
 import EditPersonalModal from './modals/EditPersonalModal'
 import DeletePersonalModal from './modals/DeletePersonalModal'
 import CustomizedSnackbar from './CustomizedSnackbar'
-//import { useDispatch, useSelector } from 'react-redux'
 import SharePopover from './SharePopover'
 
 const Personal = ({ personal }) => {
@@ -15,7 +14,6 @@ const Personal = ({ personal }) => {
     const [openDeletePersonalModal, setOpenDeletePersonalModal] = useState(false)
     const [isCopied, setIsCopied] = useState(false)
     const [success, setSuccess] = useState(false)
-    const [anchorEl, setAnchorEl] = useState(null);
     const [shareAnchorEl, setShareAnchorEl] = useState(null);
 
 
@@ -38,12 +36,9 @@ const Personal = ({ personal }) => {
         setOpenDeletePersonalModal(true);
     }
 
-    const canBeOpen = isCopied && Boolean(anchorEl);
-    const id = canBeOpen ? 'transition-popper' : undefined;
 
     const handleCopyText = (event) => {
         navigator.clipboard.writeText(personal.content).then(() => {
-            setAnchorEl(event.currentTarget);
             setIsCopied(true);
             setTimeout(() => setIsCopied(false), 3000);
         })
@@ -77,22 +72,15 @@ const Personal = ({ personal }) => {
                     <Tooltip title={!isCopied ? "Copy" : 'Copied'} variant='soft'>
                         <ContentCopy onClick={handleCopyText} className='personal-action-icon' sx={{ color: "rgb(55 55 56 / 58%)" }} size={30} />
                     </Tooltip>
-                    <Popper sx={{ width: '100%', mx: 'auto' }} id={id} open={isCopied} transition>
-                        {({ TransitionProps }) => (
-                            <Fade {...TransitionProps} timeout={350}>
-                                <Box sx={{
-                                    border: 1, py: 1.2, borderColor: 'aqua',
-                                    backgroundColor: 'rgba(17, 219, 195)',
-                                    color: 'white', fontSize: '1.4rem', fontWeight: 600, textAlign: 'center'
-                                }}>
-                                    Content copied
-                                </Box>
-                            </Fade>
-                        )}
-                    </Popper>
                 </Box>
             </Card>
-
+            <CustomizedSnackbar message="Text copied"
+                        open={isCopied}
+                        setOpen={setIsCopied}
+                        duration={5000}
+                        severity="success"
+                        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+                    />
             <EditPersonalModal open={openEditPersonalModal} setOpen={setOpenEditPersonalModal} personal={personal} />
             <DeletePersonalModal open={openDeletePersonalModal} setOpen={setOpenDeletePersonalModal} personal={personal} setSuccess={setSuccess} />
             <CustomizedSnackbar

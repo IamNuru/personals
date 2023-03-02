@@ -14,7 +14,7 @@ import {
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
-import "./styles/auth-ui.css";
+import styles from "./styles/auth_ui.module.css";
 import isEmptyObject from "../../utils/isEmptyObject";
 import Page from "../../components/Page.js"
 import { useDispatch, useSelector } from "react-redux";
@@ -81,10 +81,10 @@ const Login = () => {
 
 
   return (
-    <Page title="Login" className="wrap-auth-ui">
+    <Page title="Login" className={styles.wrap_auth_ui}>
       <form onSubmit={formik.handleSubmit}>
-        <Box className="form-wrapper">
-          <Typography component="div" className="auth-ui-title">
+        <Box className={styles.form_wrapper}>
+          <Typography component="div" className={styles.auth_ui_title}>
             <PersonOutlineOutlinedIcon />
             <Typography variant="h6" component="h6">
               LOGIN

@@ -6,7 +6,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-const CustomizedSnackbar = ({ message, duration, open, setOpen, severity }) => {
+const CustomizedSnackbar = ({ message, duration, open, setOpen, severity, anchorOrigin, ...others }) => {
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -17,11 +17,11 @@ const CustomizedSnackbar = ({ message, duration, open, setOpen, severity }) => {
   };
 
   return (
-    <Stack spacing={2} sx={{ width: '100%' }}>
+    <Stack spacing={2} sx={{ width: '100%' }} {...others}>
       <Snackbar
         open={open}
         autoHideDuration={duration ? duration : 6000}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        anchorOrigin={anchorOrigin}
         onClose={handleClose}>
         <Alert onClose={handleClose} severity={severity ? severity : 'success'} sx={{ width: '100%' }}>
           {message ? message : 'No message provided'}

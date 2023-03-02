@@ -14,14 +14,11 @@ import '../../styles/personal-form.css'
 import { useDispatch } from 'react-redux';
 import { updatePersonal } from '../../redux/actions/personalAction';
 import RenderFormikErrors from '../errors/RenderFormikErrors';
-//import { useNavigate } from 'react-router-dom';
 
 const EditPersonalModal = ({ open, setOpen, personal }) => {
 
     //redux
     const dispatch = useDispatch();
-
-    //const navigate = useNavigate()
 
 
     const formik = useFormik({
@@ -51,10 +48,10 @@ const EditPersonalModal = ({ open, setOpen, personal }) => {
                 <ModalDialog
                     aria-labelledby="edit-personal-modal"
                     aria-describedby="edit-the-personal-modal"
-                    sx={{ maxWidth: 500 }}
+                    sx={{ maxWidth: 700, width: { xs: '100%' } }}
                 >
                     <Typography component="h6"
-                        sx={{ mt: 2, mb:4, fontSize: '1.65rem', color: '#389BD9', textAlign: 'center' }}
+                        sx={{ mt: 2, mb: 4, fontSize: '1.65rem', color: '#389BD9', textAlign: 'center' }}
                         className="personal-form-title">
                         Update Information
                     </Typography>
@@ -95,19 +92,28 @@ const EditPersonalModal = ({ open, setOpen, personal }) => {
                                     }
                                 </> : null
                             }
-                            <Button
-                                variant="contained"
-                                disabled={!isEmptyObject(formik.errors)}
-                                type="submit"
-                                sx={{ backgroundColor: '#389BD9', color: 'white', fontSize: '1.2rem', fontWeight: 600, py: 1.2, mt: 6 }}
+                            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                                <Button
+                                    variant="contained"
+                                    onClick={() => setOpen(false)}
+                                    sx={{ backgroundColor: '#ec563bed', color: 'white', fontSize: '1.2rem', fontWeight: 600, py: 1.2, mt: 6 }}
+                                >
+                                    Cancel
+                                </Button>
+                                <Button
+                                    variant="contained"
+                                    disabled={!isEmptyObject(formik.errors)}
+                                    type="submit"
+                                    sx={{ backgroundColor: '#389BD9', color: 'white', fontSize: '1.2rem', fontWeight: 600, py: 1.2, mt: 6 }}
 
-                            >
-                                {formik.isSubmitting ? (
-                                    <CircularProgress size={30} color="secondary" />
-                                ) : (
-                                    'Save'
-                                )}
-                            </Button>
+                                >
+                                    {formik.isSubmitting ? (
+                                        <CircularProgress size={30} color="secondary" />
+                                    ) : (
+                                        'Save'
+                                    )}
+                                </Button>
+                            </Box>
                         </Box>
                     </form>
                 </ModalDialog>

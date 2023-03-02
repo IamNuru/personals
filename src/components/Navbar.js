@@ -19,8 +19,8 @@ import { logout } from '../redux/actions/authAction';
 
 const drawerWidth = 240;
 
-const linkStyle = { color: '#212121', textDecoration: 'none', fontSize: '1rem' }
-
+const linkStyle = { textDecoration: 'none', fontSize: '1.55rem', color:'white' }
+const linkListStyle = {borderBottom:'1px solid #ffffff5c'}
 
 
 
@@ -39,50 +39,51 @@ const Navbar = (props) => {
     };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <Typography variant="h6" sx={{ my: 2 }}>
+        <Box onClick={handleDrawerToggle} sx={{backgroundColor:'#1976d2', color:'white', height:'100%'}}>
+            <Typography variant="h6" sx={{ my: 2, textAlign:'center', fontSize:20, fontWeight:600 }}>
                 Personals
             </Typography>
             <Divider />
             <List>
-                <Link to="/" style={linkStyle}>
-                    <ListItem disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText disableTypography sx={{fontSize:'1.8rem'}} primary='Home' />
-                        </ListItemButton>
-                    </ListItem>
-                </Link>
-                <Link to="/personals" style={linkStyle}>
-                    <ListItem disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText disableTypography sx={{fontSize:'1.8rem'}} primary='Personals' />
-                        </ListItemButton>
-                    </ListItem>
-                </Link>
-                <Link to="/add-new-personal" style={linkStyle}>
-                    <ListItem disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText disableTypography sx={{fontSize:'1.8rem'}} primary='New Personal' />
-                        </ListItemButton>
-                    </ListItem>
-                </Link>
                 {
-                    loggedIn ?
-                        <Button sx={{ mt:4 }} variant="contained" onClick={logUserOut}>
+                    loggedIn ? <>
+                        <Link to="/" style={linkStyle}>
+                            <ListItem disablePadding sx={linkListStyle}>
+                                <ListItemButton>
+                                    <ListItemText disableTypography  primary='Home' />
+                                </ListItemButton>
+                            </ListItem>
+                        </Link>
+                        <Link to="/personals" style={linkStyle}>
+                            <ListItem disablePadding sx={linkListStyle}>
+                                <ListItemButton>
+                                    <ListItemText disableTypography  primary='Personals' />
+                                </ListItemButton>
+                            </ListItem>
+                        </Link>
+                        <Link to="/add-new-personal" style={linkStyle}>
+                            <ListItem disablePadding sx={linkListStyle}>
+                                <ListItemButton>
+                                    <ListItemText disableTypography  primary='New Personal' />
+                                </ListItemButton>
+                            </ListItem>
+                        </Link>
+                        <Button sx={{ mt: 4, ml:2 }} variant="contained" onClick={logUserOut}>
                             Logout
                         </Button>
+                    </>
                         : <>
                             <Link to="/register" style={linkStyle}>
-                                <ListItem disablePadding>
-                                    <ListItemButton sx={{ textAlign: 'center' }}>
-                                        <ListItemText disableTypography sx={{fontSize:'1.8rem'}} primary='Register' />
+                                <ListItem disablePadding sx={linkListStyle}>
+                                    <ListItemButton>
+                                        <ListItemText disableTypography  primary='Register' />
                                     </ListItemButton>
                                 </ListItem>
                             </Link>
                             <Link to="/login" style={linkStyle}>
-                                <ListItem disablePadding>
-                                    <ListItemButton sx={{ textAlign: 'center' }}>
-                                        <ListItemText disableTypography sx={{fontSize:'1.8rem'}} primary='Login' />
+                                <ListItem disablePadding sx={linkListStyle}>
+                                    <ListItemButton>
+                                        <ListItemText disableTypography  primary='Login' />
                                     </ListItemButton>
                                 </ListItem>
                             </Link>
@@ -116,14 +117,15 @@ const Navbar = (props) => {
                         Personals
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                        <CustomLink to="/" text="Home" />
-                        <CustomLink to="/personals" text="Personals" />
-                        <CustomLink to="/add-new-personal" text="New Personal" />
                         {
-                            loggedIn ?
+                            loggedIn ? <>
+                                <CustomLink to="/" text="Home" />
+                                <CustomLink to="/personals" text="Personals" />
+                                <CustomLink to="/add-new-personal" text="New Personal" />
                                 <Button sx={{ mx: 1 }} variant="contained" onClick={logUserOut}>
                                     Logout
                                 </Button>
+                            </>
                                 : <>
                                     <CustomLink to="/register" text="Register" />
                                     <CustomLink to="/login" text="Login" />

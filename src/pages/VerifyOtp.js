@@ -38,14 +38,13 @@ const VerifyOtp = () => {
 
     return (
         <Page title="Verify otp">
-            <style>{'#root { background-color: #1da7a7ea; height:100vh; }'}</style>
             <Box sx={{ display: 'grid', justifyContent: 'center', alignItems: 'center', minHeight: '50vh' }}>
                 <Box sx={{ textAlign: 'center', color: 'white' }}>
                     <SecurityIcon sx={{
                         fontSize: 30, p: 1, color: '#1dadadea',
                         backgroundColor: 'white', borderRadius: '100%'
                     }} />
-                    <Typography sx={{ fontSize: 18, mb: 4 }}>Verify Your OTP</Typography>
+                    <Typography sx={{ fontSize: 20, mb: 4, color:'#1dadadea', fontWeight:900 }}>Verify Your OTP</Typography>
                     <OtpInput
                         containerStyle="verify-input-style"
                         value={otpVal}
@@ -59,7 +58,7 @@ const VerifyOtp = () => {
 
                     {
                         loading ? <CircularProgress size={30}
-                            sx={{ mt: 4, color: 'white' }} /> : ''
+                            sx={{ mt: 4, color: '#1dadadea' }} /> : ''
                     }
                 </Box>
             </Box>

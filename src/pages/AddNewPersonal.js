@@ -79,11 +79,11 @@ const AddNewPersonal = () => {
                     {
                         //error messages
                         formik.dirty ? <>
-                        {
-                            !formik.isValid ? <>
-                            <RenderFormikErrors formik={formik} />
-                            </> : null
-                        }
+                            {
+                                !formik.isValid ? <>
+                                    <RenderFormikErrors formik={formik} />
+                                </> : null
+                            }
                         </> : null
                     }
                     <Button
@@ -99,7 +99,13 @@ const AddNewPersonal = () => {
                             'Save'
                         )}
                     </Button>
-                    <CustomizedSnackbar message="Personal Added Successfully" open={open} setOpen={setOpen} duration={5000} severity="success" />
+                    <CustomizedSnackbar message="Personal Added Successfully"
+                        open={open}
+                        setOpen={setOpen}
+                        duration={5000}
+                        severity="success"
+                        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+                    />
 
                 </Box>
             </form>
