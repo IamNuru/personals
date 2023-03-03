@@ -44,7 +44,6 @@
 }
 
 @media screen and (min-width: 601px) {
-  .wrap_auth_ui {}
 
   .form_wrapper {
     border-radius: 4px;
