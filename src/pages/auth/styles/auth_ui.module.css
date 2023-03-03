@@ -19,9 +19,6 @@
   flex-wrap: wrap;
   max-width: 40rem;
   padding: 1.2rem 4rem 3rem;
-  box-shadow: -1px 0px 12px 2px rgba(36, 45, 115, 0.45);
-  -webkit-box-shadow: -1px 0px 12px 2px rgba(36, 45, 115, 0.45);
-  -moz-box-shadow: -1px 0px 12px 2px rgba(36, 45, 115, 0.45);
 }
 
 .listItem {
@@ -47,8 +44,13 @@
 }
 
 @media screen and (min-width: 601px) {
+  .wrap_auth_ui {}
+
   .form_wrapper {
     border-radius: 4px;
     border: 1px solid gray;
+    box-shadow: -1px 0px 12px 2px rgba(36, 45, 115, 0.45);
+    -webkit-box-shadow: -1px 0px 12px 2px rgba(36, 45, 115, 0.45);
+    -moz-box-shadow: -1px 0px 12px 2px rgba(36, 45, 115, 0.45);
   }
 }
