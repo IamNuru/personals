@@ -88,9 +88,11 @@ const Register = () => {
 
 
   return (
-    <Page title="Create an Account" className={styles.wrap_auth_ui}>
-      <Box sx={{ display: 'flex', width: '100%' }}>
-        <Box className={styles.wrap_form}>
+    <Page title="Create an Account" className={styles.wrap_auth_ui} sx={{height:'100%'}}>
+      <Box sx={{ display: 'flex', width: '100%', height:'100%' }}>
+        <Box className={styles.wrap_form} sx={
+          {display: 'flex', justifyContent: 'center', alignItems: 'center', height:'100%'}
+          }>
           <form onSubmit={formik.handleSubmit}>
             <Box className={styles.form_wrapper} >
               <Typography component="div" className={styles.auth_ui_title}>
