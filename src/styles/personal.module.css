@@ -1,0 +1,11 @@
+.personal_action_icon{
+    color: rgb(55 55 56 / 58%);
+    width: 0.75em !important;
+    height: 0.75em !important;
+    font-size: 1.5rem !important;
+}
+
+.personal_action_icon:hover{
+    color: rgba(10, 10, 10, 0.955);
+    cursor: pointer;
+}

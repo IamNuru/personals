@@ -15,12 +15,12 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/personals" element={<Personals />} />
         <Route element={<ProtectedRoute />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/personals" element={<Personals />} />
           <Route path="/add-new-personal" element={<AddNewPersonal />} />
-          <Route path="/verify" element={<VerifyOtp />} />
         </Route>
+        <Route path="/verify" element={<VerifyOtp />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
 

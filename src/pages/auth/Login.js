@@ -20,7 +20,7 @@ import Page from "../../components/Page.js"
 import { useDispatch, useSelector } from "react-redux";
 /*import { useLoginUserMutation } from "../../features/api/userApiService";*/
 import { login } from "../../redux/actions/authAction";
-import RenderFormikErrors from "../../components/errors/RenderFormikErrors";
+
 
 const Login = () => {
   const navigate = useNavigate()
@@ -47,7 +47,7 @@ const Login = () => {
       password: "",
     },
     validationSchema: Yup.object({
-      email: Yup.string().email().required("Email is required."),
+      email: Yup.string().email('Email must be a valid email').required("Email is required."),
       password: Yup.string()
         .required("No password provided.")
         .min(6, "Password is too short - should be 6 chars minimum."),
@@ -82,86 +82,91 @@ const Login = () => {
 
   return (
     <Page title="Login" className={styles.wrap_auth_ui}>
-      <form onSubmit={formik.handleSubmit}>
-        <Box className={styles.form_wrapper}>
-          <Typography component="div" className={styles.auth_ui_title}>
-            <PersonOutlineOutlinedIcon />
-            <Typography variant="h6" component="h6">
-              LOGIN
-            </Typography>
-          </Typography>
+      <Box sx={{ display: 'flex', width: '100%' }}>
+        <Box className={styles.wrap_form}>
+          <form onSubmit={formik.handleSubmit}>
+            <Box className={styles.form_wrapper}>
+              <Typography component="div" className={styles.auth_ui_title}>
+                <PersonOutlineOutlinedIcon />
+                <Typography variant="h6" component="h6">
+                  LOGIN
+                </Typography>
+              </Typography>
 
-          <TextField
-            name="email"
-            type="text"
-            label="Email"
-            placeholder="Your Email"
-            variant="outlined"
-            size="small"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-          />
+              <TextField
+                name="email"
+                type="text"
+                label="Email"
+                placeholder="Your Email"
+                variant="outlined"
+                size="small"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.email}
+                error={formik.errors.email ? true : false}
+                helperText={formik.errors.email ? formik.errors.email : null}
+              />
 
-          <TextField
-            name="password"
-            label="password"
-            placeholder="password"
-            variant="outlined"
-            size="small"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.password}
-            type={showPassword ? "text" : "password"}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                  >
-                    {showPassword ? <Visibility /> : <VisibilityOff />}
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-          />
-
-          {
-            //error messages
-            formik.dirty ? <>
-              {
-                !formik.isValid ? <>
-                  <RenderFormikErrors formik={formik} />
-                </> : null
-              }
-            </> : null
-          }
+              <TextField
+                name="password"
+                label="password"
+                placeholder="password"
+                variant="outlined"
+                size="small"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.password}
+                type={showPassword ? "text" : "password"}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                      >
+                        {showPassword ? <Visibility /> : <VisibilityOff />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+                error={formik.errors.password ? true : false}
+                helperText={formik.errors.password ? formik.errors.password : null}
+              />
 
 
-          <Button
-            color="primary"
-            variant="contained"
-            disabled={!isEmptyObject(formik.errors)}
-            type="submit"
-            sx={{ backgroundColor: '#389BD9', py: 1.2, mt: 6, fontWeight: 700, fontSize: '1rem' }}
 
-          >
-            {formik.isSubmitting ? (
-              <CircularProgress size={30} color="secondary" />
-            ) : (
-              'Login'
-            )}
-          </Button>
+              <Button
+                color="primary"
+                variant="contained"
+                disabled={!isEmptyObject(formik.errors)}
+                type="submit"
+                sx={{ backgroundColor: '#389BD9', py: 1.2, mt: 6, fontWeight: 700, fontSize: '1rem' }}
+
+              >
+                {formik.isSubmitting ? (
+                  <CircularProgress size={30} color="secondary" />
+                ) : (
+                  'Login'
+                )}
+              </Button>
+              <Typography align="center" sx={{ p: 2, fontSize: "1rem", color: '#979494' }}>
+                Have you forgot your password?. Click on <Link to="/reset-password">Reset Password</Link> to reset your password.
+              </Typography>
+              <Typography align="center" sx={{ fontSize: "1rem", color: '#979494' }}>
+                You don't have account yet?. Click on <Link to="/register">Create account</Link> to register.
+              </Typography>
+            </Box>
+          </form>
         </Box>
-        <Typography align="center" sx={{ p: 2, fontSize: "1rem", color: '#979494' }}>
-          Have you forgot your password?. Click on <Link to="/reset-password">Reset Password</Link> to reset your password.
-        </Typography>
-        <Typography align="center" sx={{ fontSize: "1rem", color: '#979494' }}>
-          You don't have account yet?. Click on <Link to="/register">Create account</Link> to register.
-        </Typography>
-      </form>
+        <Box className={styles.wrap_image}>
+          <Box
+            component="img"
+            src="/static/personals.png"
+            sx={{ height: '100%', mx: 'auto', width: '100%', objectFit: 'cover' }}
+          />
+        </Box>
+      </Box>
     </Page>
   );
 };

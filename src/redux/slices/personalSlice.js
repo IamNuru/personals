@@ -4,8 +4,8 @@ const initialState = {
     personals: [
         {
             id:'11dd-66s-45',
-            title:'Facebook password',
-            content:'what the hell is here'
+            title:'Fb Pwd',
+            content:'1fac444dghh'
         }
     ],
     selectedPersonal: null,
