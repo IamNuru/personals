@@ -92,7 +92,7 @@ const Personal = ({ personal }) => {
                         :
                         <Box sx={{ float: 'right' }}>
                             <Tooltip title="More">
-                                <MoreVert aria-describedby={ToggleIconsId} onClick={handleClickToggleIcons} className={styles.personal_action_icon} sx={{fontSize:'3.5rem !important'}} />
+                                <MoreVert aria-describedby={ToggleIconsId} onClick={handleClickToggleIcons} className={styles.personal_action_icon} sx={{fontSize:'2.5rem !important'}} />
                             </Tooltip>
                         </Box>
                 }
