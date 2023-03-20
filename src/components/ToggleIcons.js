@@ -63,7 +63,7 @@ const ToggleIcons = ({ anchorEl, setAnchorEl, id, open, personal }) => {
                 }}
             >
                 <Box sx={{
-                    minHeight: 80, width: 100,
+                    minHeight: 80, width: 80,
                     display: 'flex', justifyContent: 'center',
                     alignItems: 'center', gap: 2.5, py: 2
                 }}>
