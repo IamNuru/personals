@@ -113,7 +113,7 @@ const Navbar = (props) => {
                             loggedIn ? <>
                                 {
                                     APP_NAVS.filter(item => item.loggedIn === true || item.loggedIn === 'both')?.map((nav, i) => {
-                                        return <CustomLink to={`${nav.link}`} text={`${nav.text}`} />
+                                        return <CustomLink to={`${nav.link}`} text={`${nav.text}`} key={i} />
                                     })
                                 }
                                 <Button sx={{ mx: 1 }} variant="contained" onClick={logUserOut}>
@@ -123,7 +123,7 @@ const Navbar = (props) => {
                                 : <>
                                     {
                                         APP_NAVS.filter(item => item.loggedIn === false)?.map((nav, i) => {
-                                            return <CustomLink to={`${nav.link}`} text={`${nav.text}`} />
+                                            return <CustomLink to={`${nav.link}`} text={`${nav.text}`} key={i} />
                                         })
                                     }
                                 </>

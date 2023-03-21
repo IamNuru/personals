@@ -213,7 +213,7 @@ const Register = () => {
         <Box className={styles.wrap_image}>
           <Box
             component="img"
-            src="/static/personals.png"
+            src="/static/personals.avif"
             sx={{ height: '100%', mx: 'auto', width: '100%', objectFit: 'cover' }}
           />
         </Box>

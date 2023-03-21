@@ -150,10 +150,10 @@ const Login = () => {
                   'Login'
                 )}
               </Button>
-              <Typography align="center" sx={{ p: 2, fontSize: "1rem", color: '#979494' }}>
+              <Typography align="center" sx={{ p: 2, fontSize: "1rem", color: '#434343' }}>
                 Have you forgot your password?. Click on <Link to="/reset-password">Reset Password</Link> to reset your password.
               </Typography>
-              <Typography align="center" sx={{ fontSize: "1rem", color: '#979494' }}>
+              <Typography align="center" sx={{ fontSize: "1rem", color: '#434343' }}>
                 You don't have account yet?. Click on <Link to="/register">Create account</Link> to register.
               </Typography>
             </Box>
@@ -162,7 +162,7 @@ const Login = () => {
         <Box className={styles.wrap_image}>
           <Box
             component="img"
-            src="/static/personals.png"
+            src="/static/personals.avif"
             sx={{ height: '100%', mx: 'auto', width: '100%', objectFit: 'cover' }}
           />
         </Box>
