@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -16,13 +16,15 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 import styles from "./styles/auth_ui.module.css";
 import isEmptyObject from "../../utils/isEmptyObject";
-import Page from "../../components/Page.js"
+/* import Page from "../../components/Page.js" */
 import { useDispatch, useSelector } from "react-redux";
 /*import { useLoginUserMutation } from "../../features/api/userApiService";*/
 import { login } from "../../redux/actions/authAction";
 
 
 const Login = () => {
+  const Page = lazy(() => import('../../components/Page'))
+
   const navigate = useNavigate()
   const location = useLocation();
   const from = location.state ? location.state.from : "/";
@@ -81,6 +83,7 @@ const Login = () => {
 
 
   return (
+    <Suspense fallback={'loading'}>
     <Page title="Login" className={styles.wrap_auth_ui}>
       <Box sx={{ display: 'flex', width: '100%' }}>
         <Box className={styles.wrap_form}>
@@ -168,6 +171,7 @@ const Login = () => {
         </Box>
       </Box>
     </Page>
+    </Suspense>
   );
 };
 
