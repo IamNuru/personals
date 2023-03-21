@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -18,10 +18,10 @@ import styles from "./styles/auth_ui.module.css";
 import isEmptyObject from "../../utils/isEmptyObject";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/actions/authAction";
+import Page from "../../components/Page";
 
 
 const Login = () => {
-  const Page = lazy(() => import('../../components/Page'))
 
   const navigate = useNavigate()
   const location = useLocation();
@@ -43,11 +43,14 @@ const Login = () => {
   /* using formik */
   const formik = useFormik({
     initialValues: {
-      email: "",
+      userName: "",
       password: "",
     },
     validationSchema: Yup.object({
-      email: Yup.string().required("Username/Email field is required."),
+      userName: Yup.string()
+        .required("UserName/Email field is required.")
+        .matches(/^\S+$/, 'Invalid email or username')
+        .min(2, "UserName must be more than 2 characters."),
       password: Yup.string()
         .required("No password provided.")
         .min(6, "Password is too short - should be 6 chars minimum."),
@@ -81,7 +84,6 @@ const Login = () => {
 
 
   return (
-    <Suspense fallback={'loading'}>
     <Page title="Login" className={styles.wrap_auth_ui} sx={{mt:{xs:8, sm:10}}}>
       <Box sx={{ display: 'flex', width: '100%' }}>
         <Box className={styles.wrap_form}>
@@ -95,7 +97,7 @@ const Login = () => {
               </Typography>
 
               <TextField
-                name="email"
+                name="userName"
                 type="text"
                 label={<label className="input_label_font">UserName/Email</label>}
                 placeholder="Your username/email"
@@ -103,9 +105,9 @@ const Login = () => {
                 size="small"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                value={formik.values.email}
-                error={formik.errors.email ? true : false}
-                helperText={formik.errors.email ? formik.errors.email : null}
+                value={formik.values.userName}
+                error={formik.errors.userName ? true : false}
+                helperText={formik.errors.userName ? formik.errors.userName : null}
                 sx={{mb:2}}
               />
 
@@ -169,7 +171,6 @@ const Login = () => {
         </Box>
       </Box>
     </Page>
-    </Suspense>
   );
 };
 
