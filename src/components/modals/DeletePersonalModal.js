@@ -16,18 +16,18 @@ const DeletePersonalModal = ({ open, setOpen, personal, setSuccess }) => {
         <Modal open={open} onClose={() => setOpen(false)}>
             <ModalDialog color="danger" sx={{maxWidth:500, width:{xs:'100%'}}}>
                 <ModalClose />
-                <Typography sx={{ fontWeight: 600, fontSize: '1.4rem' }}>Delete Modal</Typography>
+                <Typography sx={{ fontWeight: 600, fontSize: '1.4rem' }}>Comfirm Delete Personal</Typography>
                 <Typography>You are about to delete personal with title
                     <Typography sx={{ fontWeight: 600, fontSize: '1rem', px: 1 }}>{personal?.title}</Typography> </Typography>
                 <Box sx={{display:'flex', justifyContent:'space-between', mx:2}}>
                 <Button color="danger" variant="contained" sx={{
                     display: 'grid', justifyContent: 'center',
-                    mx: 'auto', mt: 4, backgroundColor: '#fda494', border: 'red',
+                    mx: 'auto', mt: 4, backgroundColor: '#fddd94fc', border: 'red',
                     fontWeight: '600', fontSize: '1.35rem', color: 'white'
-                }} onClick={() => setOpen(false)}>cancel</Button>
+                }} onClick={() => setOpen(false)}>Cancel</Button>
                 <Button color="primary" variant="contained" sx={{
                     display: 'grid', justifyContent: 'center',
-                    mx: 'auto', mt: 4, backgroundColor: '#d73a3ae6', border: 'red',
+                    mx: 'auto', mt: 4, backgroundColor: '#3ad7bae6', border: 'red',
                     fontWeight: '600', fontSize: '1.35rem', color: 'white'
                 }} onClick={() => deleteItem(personal.id)}>Confirm</Button>
                 </Box>

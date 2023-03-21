@@ -17,11 +17,12 @@ import { Button } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../redux/actions/authAction';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+import { APP_NAVS } from '../config';
 
 const drawerWidth = 240;
 
-const linkStyle = { textDecoration: 'none', fontSize: '1.55rem', color:'white' }
-const linkListStyle = {borderBottom:'1px solid #ffffff5c'}
+const linkStyle = { textDecoration: 'none', fontSize: '1.55rem', color: 'white' }
+const linkListStyle = { borderBottom: '1px solid #ffffff5c' }
 
 
 
@@ -40,56 +41,44 @@ const Navbar = (props) => {
     };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} 
-        sx={{backgroundColor:'#1976d2', color:'white', height:'100%', overflowX:'hidden'}}>
-            <Typography variant="h6" sx={{ my: 2, textAlign:'center', fontSize:20, fontWeight:600 }}>
+        <Box onClick={handleDrawerToggle}
+            sx={{ backgroundColor: '#1976d2', color: 'white', height: '100%', overflowX: 'hidden' }}>
+            <Typography variant="h6" sx={{ my: 2, textAlign: 'center', fontSize: 20, fontWeight: 600 }}>
                 Personals
             </Typography>
             <Divider />
             <List>
+
                 {
                     loggedIn ? <>
-                        <Link to="/" style={linkStyle}>
-                            <ListItem disablePadding sx={linkListStyle}>
-                                <ListItemButton>
-                                    <ListItemText disableTypography  primary='Home' />
-                                </ListItemButton>
-                            </ListItem>
-                        </Link>
-                        <Link to="/personals" style={linkStyle}>
-                            <ListItem disablePadding sx={linkListStyle}>
-                                <ListItemButton>
-                                    <ListItemText disableTypography  primary='Personals' />
-                                </ListItemButton>
-                            </ListItem>
-                        </Link>
-                        <Link to="/add-new-personal" style={linkStyle}>
-                            <ListItem disablePadding sx={linkListStyle}>
-                                <ListItemButton>
-                                    <ListItemText disableTypography  primary='New Personal' />
-                                </ListItemButton>
-                            </ListItem>
-                        </Link>
-                        <Button sx={{ mt: 8, mx:2, width:'90%' }} variant="contained" 
-                        onClick={logUserOut} endIcon={<PowerSettingsNewIcon />}>
+                        {
+                            APP_NAVS.filter(item => item.loggedIn === true)?.map((nav, i) => {
+                                return <Link to={`${nav.link}`} style={linkStyle} key={i}>
+                                    <ListItem disablePadding sx={linkListStyle}>
+                                        <ListItemButton>
+                                            <ListItemText disableTypography primary={`${nav.text}`} />
+                                        </ListItemButton>
+                                    </ListItem>
+                                </Link>
+                            })
+                        }
+                        <Button sx={{ mt: 8, mx: 2, width: '90%' }} variant="contained"
+                            onClick={logUserOut} endIcon={<PowerSettingsNewIcon />}>
                             Logout
                         </Button>
                     </>
                         : <>
-                            <Link to="/register" style={linkStyle}>
-                                <ListItem disablePadding sx={linkListStyle}>
-                                    <ListItemButton>
-                                        <ListItemText disableTypography  primary='Register' />
-                                    </ListItemButton>
-                                </ListItem>
-                            </Link>
-                            <Link to="/login" style={linkStyle}>
-                                <ListItem disablePadding sx={linkListStyle}>
-                                    <ListItemButton>
-                                        <ListItemText disableTypography  primary='Login' />
-                                    </ListItemButton>
-                                </ListItem>
-                            </Link>
+                            {
+                                APP_NAVS.filter(item => item.loggedIn === false)?.map((nav, i) => {
+                                    return <Link to={`${nav.link}`} style={linkStyle} key={i}>
+                                        <ListItem disablePadding sx={linkListStyle}>
+                                            <ListItemButton>
+                                                <ListItemText disableTypography primary={`${nav.text}`} />
+                                            </ListItemButton>
+                                        </ListItem>
+                                    </Link>
+                                })
+                            }
                         </>
                 }
 
@@ -122,16 +111,21 @@ const Navbar = (props) => {
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {
                             loggedIn ? <>
-                                <CustomLink to="/" text="Home" />
-                                <CustomLink to="/personals" text="Personals" />
-                                <CustomLink to="/add-new-personal" text="New Personal" />
+                                {
+                                    APP_NAVS.filter(item => item.loggedIn === true || item.loggedIn === 'both')?.map((nav, i) => {
+                                        return <CustomLink to={`${nav.link}`} text={`${nav.text}`} />
+                                    })
+                                }
                                 <Button sx={{ mx: 1 }} variant="contained" onClick={logUserOut}>
                                     Logout
                                 </Button>
                             </>
                                 : <>
-                                    <CustomLink to="/register" text="Register" />
-                                    <CustomLink to="/login" text="Login" />
+                                    {
+                                        APP_NAVS.filter(item => item.loggedIn === false)?.map((nav, i) => {
+                                            return <CustomLink to={`${nav.link}`} text={`${nav.text}`} />
+                                        })
+                                    }
                                 </>
                         }
                     </Box>
