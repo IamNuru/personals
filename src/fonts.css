@@ -1,0 +1,30 @@
+.lobster {
+    font-family: 'Lobster Two', cursive !important;
+}
+
+.merriweather {
+    font-family: 'Merriweather', serif !important;
+}
+
+.oswald {
+    font-family: 'Oswald', sans-serif !important;
+}
+
+.sawarabi {
+    font-family: 'Sawarabi Mincho', serif !important;
+}
+
+.inconsolata {
+    font-family: 'Inconsolata', monospace;
+}
+
+.header_font {
+    font-family: 'Oswald', sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.075em !important;
+}
+.input_label_font {
+    font-family: 'Inconsolata', monospace;
+    letter-spacing: 0.075em !important;
+    font-weight: 600 !important;
+}

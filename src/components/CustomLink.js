@@ -7,7 +7,7 @@ function CustomLink({ children, to, text, ...others }) {
 
     return (
         <Button {...others} sx={{mx:1}} className={`custom-link ${matched ? 'active-custom-link' : ''}`}>
-            <Link to={to}>{text}</Link>
+            <Link to={to} className='merriweather'>{text}</Link>
         </Button>
     )
 }

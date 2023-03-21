@@ -56,7 +56,7 @@ const Navbar = (props) => {
                                 return <Link to={`${nav.link}`} style={linkStyle} key={i}>
                                     <ListItem disablePadding sx={linkListStyle}>
                                         <ListItemButton>
-                                            <ListItemText disableTypography primary={`${nav.text}`} />
+                                            <ListItemText className='merriweather' disableTypography primary={`${nav.text}`} />
                                         </ListItemButton>
                                     </ListItem>
                                 </Link>
@@ -73,7 +73,7 @@ const Navbar = (props) => {
                                     return <Link to={`${nav.link}`} style={linkStyle} key={i}>
                                         <ListItem disablePadding sx={linkListStyle}>
                                             <ListItemButton>
-                                                <ListItemText disableTypography primary={`${nav.text}`} />
+                                                <ListItemText className='merriweather' disableTypography primary={`${nav.text}`} />
                                             </ListItemButton>
                                         </ListItem>
                                     </Link>
@@ -123,7 +123,7 @@ const Navbar = (props) => {
                                 : <>
                                     {
                                         APP_NAVS.filter(item => item.loggedIn === false)?.map((nav, i) => {
-                                            return <CustomLink to={`${nav.link}`} text={`${nav.text}`} key={i} />
+                                            return <CustomLink to={`${nav.link}`} text={`${nav.text}`} key={i}  />
                                         })
                                     }
                                 </>

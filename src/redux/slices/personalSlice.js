@@ -4,9 +4,19 @@ const initialState = {
     personals: [
         {
             id:'11dd-66s-45',
+            title:'PVC No.',
+            content:'1fac444dghh'
+        },
+        {
+            id:'117d-66s-45',
             title:'Fb Pwd',
             content:'1fac444dghh'
-        }
+        },
+        {
+            id:'116d-66s-45',
+            title:'Twitter Pwd',
+            content:'1fac444dghh'
+        },
     ],
     selectedPersonal: null,
 }

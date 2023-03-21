@@ -77,7 +77,7 @@ const Personal = ({ personal }) => {
                         </Tooltip>
                     </Box>
                 }
-                <Box sx={{ pl: 0.2, mt: 1 }}>
+                <Box sx={{ pl: 1.7, mt: 1 }}>
                     <Typography variant='h6' sx={{ fontSize: '1.2rem', color: '#0d0c0c', lineHeight: '1.2rem' }}>{personal.content}</Typography>
                 </Box>
 

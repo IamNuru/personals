@@ -47,7 +47,7 @@ const AddNewPersonal = () => {
             <form onSubmit={formik.handleSubmit} style={{ width: '100%' }}>
                 <Box className="form-wrapper" sx={{ margin: '0 auto' }}>
                     <Typography component="h6"
-                        sx={{ my: 2, fontSize: '1.65rem', color: '#389BD9', textAlign: 'center' }}
+                        sx={{ my: 1, fontSize: '1.65rem', color: '#389BD9', textAlign: 'center' }}
                         className="personal-form-title">
                         Save Information
                     </Typography>
@@ -67,11 +67,11 @@ const AddNewPersonal = () => {
 
                     <TextField
                         name="content"
-                        label="content"
+                        label="Content"
                         placeholder="personal content"
                         variant="outlined"
                         multiline
-                        rows={3}
+                        rows={1.5}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.content}
@@ -91,7 +91,7 @@ const AddNewPersonal = () => {
                         variant="contained"
                         disabled={!isEmptyObject(formik.errors) || formik.isSubmitting}
                         type="submit"
-                        sx={{ backgroundColor: '#389BD9', py: 1.2, mt: 6, fontWeight: 700, fontSize: '1rem' }}
+                        sx={{ backgroundColor: '#389BD9', py: 1.2, mt: 4, fontWeight: 700, fontSize: '1rem' }}
                     >
                         {formik.isSubmitting ? (
                             <CircularProgress size={30} color="secondary" />

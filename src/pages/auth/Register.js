@@ -43,23 +43,24 @@ const Register = () => {
   /* using formik */
   const formik = useFormik({
     initialValues: {
-      firstName: "",
-      lastName: "",
+      userName: "",
       email: "",
       password: "",
+      confirmPassword: "",
     },
     validationSchema: Yup.object({
-      firstName: Yup.string()
-        .required("First Name is required.")
-        .min(2, "First Name must be more than 2 characters."),
-      lastName: Yup.string().min(
-        2,
-        "Last Name must be more than 2 characters."
-      ),
+      userName: Yup.string()
+        .required("UserName is required.")
+        .matches(/^\S+$/, 'Invalid email or username')
+        .min(2, "UserName must be more than 2 characters."),
       email: Yup.string().email('Email must be a valid email').required("Email is required."),
       password: Yup.string()
         .required("Password is Required.")
         .min(6, "Password is too short - should be 6 chars minimum."),
+      confirmPassword: Yup.string()
+        .required("Confirm Password is Required.")
+        .min(6, "Confirm Password is too short - should be 6 chars minimum.")
+        .oneOf([Yup.ref('password'), null], 'Password confirmation do not match'),
     }),
 
     onSubmit: async (credentials, { setSubmitting }) => {
@@ -88,111 +89,116 @@ const Register = () => {
 
 
   return (
-    <Page title="Create an Account" className={styles.wrap_auth_ui}>
+    <Page title="Create an Account" className={styles.wrap_auth_ui} sx={{ mt: { xs: 8, sm: 10 } }}>
       <Box sx={{ display: 'flex', width: '100%' }}>
         <Box className={styles.wrap_form} sx={
-          {display: 'flex', justifyContent: 'center', alignItems: 'center'}
-          }>
+          { display: 'flex', justifyContent: 'center', alignItems: 'center' }
+        }>
           <form onSubmit={formik.handleSubmit}>
             <Box className={styles.form_wrapper} >
               <Typography component="div" className={styles.auth_ui_title}>
                 <PersonOutlineOutlinedIcon />
-                <Typography variant="h6" component="h6">
+                <Typography variant="h6" component="h6" className="header_font">
                   REGISTER
                 </Typography>
               </Typography>
-
-              <Grid container spacing={4.5}>
-                <Grid container item spacing={3}>
-                  <Grid item xs={12} xl={6}>
-                    <TextField
-                      name="firstName"
-                      type="text"
-                      label="First Name"
-                      placeholder="First Name"
-                      variant="outlined"
-                      size="small"
-                      fullWidth
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      value={formik.values.firstName}
-                      error={formik.errors.firstName ? true : false}
-                      helperText={formik.errors.firstName ? formik.errors.firstName : null}
-                    />
-                  </Grid>
-                  <Grid item xs={12} xl={6}>
-                    <TextField
-                      name="lastName"
-                      type="text"
-                      label="Last Name"
-                      placeholder="LastName (optional)"
-                      variant="outlined"
-                      size="small"
-                      fullWidth
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      value={formik.values.lastName}
-                      error={formik.errors.lastName ? true : false}
-                      helperText={formik.errors.lastName ? formik.errors.lastName : null}
-                    />
-                  </Grid>
+              <Grid container item spacing={3}>
+                <Grid item xs={12} xl={6}>
+                  <TextField
+                    name="userName"
+                    type="text"
+                    label={<label className="input_label_font">UserName</label>}
+                    placeholder="Your username"
+                    variant="outlined"
+                    size="small"
+                    fullWidth
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.userName}
+                    error={formik.errors.userName ? true : false}
+                    helperText={formik.errors.userName ? formik.errors.userName : null}
+                  />
                 </Grid>
-
-
-                <Grid container item spacing={3}>
-                  <Grid item xs={12} xl={6}>
-                    <TextField
-                      name="email"
-                      type="email"
-                      label="Email"
-                      placeholder="youremail@email.com"
-                      size="small"
-                      fullWidth
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      value={formik.values.email}
-                      error={formik.errors.email ? true : false}
-                      helperText={formik.errors.email ? formik.errors.email : null}
-                    />
-                  </Grid>
-                  <Grid item xs={12} xl={6}>
-                    <TextField
-                      name="password"
-                      label="Password"
-                      placeholder="Password"
-                      variant="outlined"
-                      size="small"
-                      fullWidth
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      value={formik.values.password}
-                      type={showPassword ? "text" : "password"}
-                      InputProps={{
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <IconButton
-                              aria-label="toggle password visibility"
-                              onClick={handleClickShowPassword}
-                              onMouseDown={handleMouseDownPassword}
-                            >
-                              {showPassword ? <Visibility /> : <VisibilityOff />}
-                            </IconButton>
-                          </InputAdornment>
-                        ),
-                      }}
-                      error={formik.errors.password ? true : false}
-                      helperText={formik.errors.password ? formik.errors.password : null}
-                    />
-                  </Grid>
+                <Grid item xs={12} xl={6}>
+                  <TextField
+                    name="email"
+                    type="email"
+                    label={<label className="input_label_font">Email</label>}
+                    placeholder="youremail@email.com"
+                    size="small"
+                    fullWidth
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.email}
+                    error={formik.errors.email ? true : false}
+                    helperText={formik.errors.email ? formik.errors.email : null}
+                  />
+                </Grid>
+                <Grid item xs={12} xl={6}>
+                  <TextField
+                    name="password"
+                    label={<label className="input_label_font">Password</label>}
+                    placeholder="Password"
+                    variant="outlined"
+                    size="small"
+                    fullWidth
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.password}
+                    type={showPassword ? "text" : "password"}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                          >
+                            {showPassword ? <Visibility /> : <VisibilityOff />}
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                    }}
+                    error={formik.errors.password ? true : false}
+                    helperText={formik.errors.password ? formik.errors.password : null}
+                  />
+                </Grid>
+                <Grid item xs={12} xl={6}>
+                  <TextField
+                    name="confirmPassword"
+                    label={<label className="input_label_font">Confirm Password</label>}
+                    placeholder="Confirm Password"
+                    variant="outlined"
+                    size="small"
+                    fullWidth
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.confirmPassword}
+                    type={showPassword ? "text" : "password"}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                          >
+                            {showPassword ? <Visibility /> : <VisibilityOff />}
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                    }}
+                    error={formik.errors.confirmPassword ? true : false}
+                    helperText={formik.errors.confirmPassword ? formik.errors.confirmPassword : null}
+                  />
                 </Grid>
               </Grid>
-
               <Button
                 color="primary"
                 variant="contained"
                 disabled={!isEmptyObject(formik.errors)}
                 type="submit"
-                sx={{ backgroundColor: '#389BD9', py: 1.2, mt: 6, fontWeight: 700, fontSize: '1rem' }}
+                sx={{ backgroundColor: '#389BD9', py: 1.2, mt: 3, fontWeight: 700, fontSize: '1rem' }}
               >
                 {formik.isSubmitting ? (
                   <CircularProgress size={30} color="primary" />
@@ -200,14 +206,14 @@ const Register = () => {
                   "Register"
                 )}
               </Button>
+              <Typography
+                align="center"
+                sx={{ pt: 4, px:2, fontSize: "1rem", color: "#979494" }}
+              >
+                Already have an account?. Click on <Link to="/login">Login</Link> to
+                log into you account.
+              </Typography>
             </Box>
-            <Typography
-              align="center"
-              sx={{ p: 4, fontSize: "1rem", color: "#979494" }}
-            >
-              Already have an account?. Click on <Link to="/login">Login</Link> to
-              log into you account.
-            </Typography>
           </form>
         </Box>
         <Box className={styles.wrap_image}>

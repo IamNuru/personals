@@ -47,7 +47,7 @@ const Login = () => {
       password: "",
     },
     validationSchema: Yup.object({
-      email: Yup.string().email('Email must be a valid email').required("Email is required."),
+      email: Yup.string().required("Username/Email field is required."),
       password: Yup.string()
         .required("No password provided.")
         .min(6, "Password is too short - should be 6 chars minimum."),
@@ -82,14 +82,14 @@ const Login = () => {
 
   return (
     <Suspense fallback={'loading'}>
-    <Page title="Login" className={styles.wrap_auth_ui}>
+    <Page title="Login" className={styles.wrap_auth_ui} sx={{mt:{xs:8, sm:10}}}>
       <Box sx={{ display: 'flex', width: '100%' }}>
         <Box className={styles.wrap_form}>
           <form onSubmit={formik.handleSubmit}>
-            <Box className={styles.form_wrapper}>
+            <Box className={styles.form_wrapper} sx={{mx:'auto'}}>
               <Typography component="div" className={styles.auth_ui_title}>
                 <PersonOutlineOutlinedIcon />
-                <Typography variant="h6" component="h6">
+                <Typography variant="h6" component="h6" className="header_font">
                   LOGIN
                 </Typography>
               </Typography>
@@ -97,8 +97,8 @@ const Login = () => {
               <TextField
                 name="email"
                 type="text"
-                label="Email"
-                placeholder="Your Email"
+                label={<label className="input_label_font">UserName/Email</label>}
+                placeholder="Your username/email"
                 variant="outlined"
                 size="small"
                 onChange={formik.handleChange}
@@ -106,12 +106,13 @@ const Login = () => {
                 value={formik.values.email}
                 error={formik.errors.email ? true : false}
                 helperText={formik.errors.email ? formik.errors.email : null}
+                sx={{mb:2}}
               />
 
               <TextField
                 name="password"
-                label="password"
-                placeholder="password"
+                label={<label className="input_label_font">Password</label>}
+                placeholder="Password"
                 variant="outlined"
                 size="small"
                 onChange={formik.handleChange}
@@ -142,8 +143,7 @@ const Login = () => {
                 variant="contained"
                 disabled={!isEmptyObject(formik.errors)}
                 type="submit"
-                sx={{ backgroundColor: '#389BD9', py: 1.2, mt: 6, fontWeight: 700, fontSize: '1rem' }}
-
+                sx={{ backgroundColor: '#389BD9', py: 1.2, mt: 3, fontWeight: 700, fontSize: '1rem' }}
               >
                 {formik.isSubmitting ? (
                   <CircularProgress size={30} color="secondary" />

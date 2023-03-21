@@ -21,7 +21,7 @@ const VerifyOtp = () => {
 
     const handleChange = (e) => {
         setOtpVal(e)
-        if (e.length > 3) {
+        if (e.length > 5) {
             setLoading(true)
             setTimeout(() => {
                 setLoading(false)
@@ -55,7 +55,7 @@ const VerifyOtp = () => {
                         containerStyle="verify-input-style"
                         value={otpVal}
                         onChange={handleChange}
-                        numInputs={4}
+                        numInputs={6}
                         separator={<span>-</span>}
                         isInputNum
                         shouldAutoFocus

@@ -4,10 +4,10 @@
 }
 
 .wrap_image {
-  margin-left: -15%;
+  margin-left: -10%;
   color: green;
   z-index: -10;
-  width: 50%;
+  width: 60%;
   display: none;
 }
 
@@ -30,8 +30,10 @@
   gap: 1rem;
   align-items: center;
   flex-wrap: wrap;
-  max-width: 40rem;
+  max-width: 28rem;
   padding: 1.2rem 4rem 3rem;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 
@@ -64,11 +66,11 @@
   }
 
   .form_wrapper {
-    margin-right: 10px;
+    margin-right: 5px;
   }
 
   .wrap_form {
-    width: 65%;
+    width: 55%;
     clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 0 100%);
   }
 
@@ -77,8 +79,4 @@
   }
 }
 
-@media screen and (min-width: 801px) {
-  .form_wrapper {
-    margin-right: 80px;
-  }
-}
+@media screen and (min-width: 801px) {}

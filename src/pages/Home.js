@@ -1,9 +1,10 @@
 import React from 'react'
-import { Box, Typography } from '@mui/material'
+import {  Typography } from '@mui/material'
+import Page from '../components/Page'
 
 const Home = () => {
   return (
-    <Box>
+    <Page title="Personals | Home Page" sx={{mt:10}}>
       <Typography variant='h4' sx={{ textAlign: 'center', fontWeight:600, textDecoration:'underline' }}> Where does it come from? </Typography>
       <Typography sx={{ mb: 2, lineHeight: 1.7, fontSize:'1.4rem', mx:{xs:2} }}>
         Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
@@ -24,7 +25,7 @@ const Home = () => {
         <Typography sx={{ mb: 2, lineHeight: 1.7, fontSize:'1.4rem', mx:{xs:2} }}>
         All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
       </Typography>
-    </Box>
+    </Page>
   )
 }
 
