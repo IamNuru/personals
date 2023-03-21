@@ -95,6 +95,7 @@ const Register = () => {
           { display: 'flex', justifyContent: 'center', alignItems: 'center' }
         }>
           <form onSubmit={formik.handleSubmit}>
+            {console.log(formik.touched)}
             <Box className={styles.form_wrapper} >
               <Typography component="div" className={styles.auth_ui_title}>
                 <PersonOutlineOutlinedIcon />
@@ -115,8 +116,8 @@ const Register = () => {
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.userName}
-                    error={formik.errors.userName ? true : false}
-                    helperText={formik.errors.userName ? formik.errors.userName : null}
+                    error={formik.touched.userName ? formik.errors.userName ? true : false : null}
+                    helperText={formik.touched.userName && formik.errors.userName ? formik.errors.userName : null}
                   />
                 </Grid>
                 <Grid item xs={12} xl={6}>
@@ -130,8 +131,8 @@ const Register = () => {
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.email}
-                    error={formik.errors.email ? true : false}
-                    helperText={formik.errors.email ? formik.errors.email : null}
+                    error={formik.touched.email ? formik.errors.email ? true : false : null}
+                    helperText={formik.touched.email && formik.errors.email ? formik.errors.email : null}
                   />
                 </Grid>
                 <Grid item xs={12} xl={6}>
@@ -159,8 +160,8 @@ const Register = () => {
                         </InputAdornment>
                       ),
                     }}
-                    error={formik.errors.password ? true : false}
-                    helperText={formik.errors.password ? formik.errors.password : null}
+                    error={formik.touched.password ? formik.errors.password ? true : false : null}
+                    helperText={formik.touched.password && formik.errors.password ? formik.errors.password : null}
                   />
                 </Grid>
                 <Grid item xs={12} xl={6}>
@@ -188,8 +189,8 @@ const Register = () => {
                         </InputAdornment>
                       ),
                     }}
-                    error={formik.errors.confirmPassword ? true : false}
-                    helperText={formik.errors.confirmPassword ? formik.errors.confirmPassword : null}
+                    error={formik.touched.confirmPassword ? formik.errors.confirmPassword ? true : false: null}
+                    helperText={formik.errors.confirmPassword && formik.errors.confirmPassword ? formik.errors.confirmPassword : null}
                   />
                 </Grid>
               </Grid>
