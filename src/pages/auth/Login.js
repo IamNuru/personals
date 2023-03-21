@@ -16,9 +16,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 import styles from "./styles/auth_ui.module.css";
 import isEmptyObject from "../../utils/isEmptyObject";
-/* import Page from "../../components/Page.js" */
 import { useDispatch, useSelector } from "react-redux";
-/*import { useLoginUserMutation } from "../../features/api/userApiService";*/
 import { login } from "../../redux/actions/authAction";
 
 
