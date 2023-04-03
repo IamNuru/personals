@@ -21,7 +21,7 @@ import { APP_NAVS } from '../config';
 
 const drawerWidth = 240;
 
-const linkStyle = { textDecoration: 'none', fontSize: '1.55rem', color: 'white' }
+const linkStyle = { textDecoration: 'none', fontSize: '1.55rem', color: '#3c3a3a' }
 const linkListStyle = { borderBottom: '1px solid #ffffff5c' }
 
 
@@ -42,7 +42,7 @@ const Navbar = (props) => {
 
     const drawer = (
         <Box onClick={handleDrawerToggle}
-            sx={{ backgroundColor: '#1976d2', color: 'white', height: '100%', overflowX: 'hidden' }}>
+            sx={{ backgroundColor: '#faecf8', color: '#3c3a3a', height: '100%', overflowX: 'hidden' }}>
             <Typography variant="h6" sx={{ my: 2, textAlign: 'center', fontSize: 20, fontWeight: 600 }}>
                 Personals
             </Typography>
@@ -90,7 +90,7 @@ const Navbar = (props) => {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <AppBar component="nav" position='fixed'>
+            <AppBar component="nav" position='fixed' sx={{ backgroundColor:'#faecf8', color:'#3c3a3a'}}>
                 <Toolbar>
                     <IconButton
                         color="inherit"

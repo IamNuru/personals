@@ -10,7 +10,7 @@ const Personals = () => {
   const personals = useSelector(state => state.personal.personals)
   
   return (
-    <Page title="Personals" sx={{height:'90vh', mx:1, mt:12, maxWidth:'64rem', mx:'auto'}}>
+    <Page title="Personals" sx={{height:'90vh', mt:12, maxWidth:'64rem', mx:'auto'}}>
       {
         personals ? <>
           {
