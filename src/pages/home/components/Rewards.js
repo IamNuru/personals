@@ -10,10 +10,10 @@ const Rewards = () => {
             <Box className={styles.wrap_message}>
                 <img alt="user" src="/static/user.png" className={styles.wrap_reward_message_image} />
                 <Box className={styles.message_content}>
-                    <Typography variant='h1' sx={{ color: '#F4F4F4', fontSize: '1.17em', fontWeight: 'bold', lineHeight:1.65 }}>Create an account<br />
-                        <Typography variant='span' sx={{ color: '#FAECF8', fontSize: '1.17em', fontWeight: 'bold', }}>then store all your important personals</Typography>
+                    <Typography variant='h1' sx={{ color: '#F4F4F4', fontSize: 24, fontWeight: 'bold', lineHeight:1.65 }}>Create an Account,<br />
+                        <Typography variant='span' sx={{ color: '#FAECF8', fontSize: '1.17em', fontWeight: 'bold', }}>then store all your important personals.</Typography>
                     </Typography>
-                    <Typography sx={{ marginTop: '0.5rem', color: '#F4F4F4' }}>
+                    <Typography sx={{ marginTop: '0.5rem', color: '#F4F4F4', fontSize:18 }}>
                         It's your personal database. Create an account, then keep record of all your data. Your data is secured and available to you only. You can edit, delete or share them with others. Easy and very reliable.
                     </Typography>
                 </Box>

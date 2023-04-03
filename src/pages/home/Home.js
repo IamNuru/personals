@@ -8,7 +8,7 @@ import Testimonies from './components/Testimonies'
 
 const Home = () => {
   return (
-    <Page title="Personals | Home Page" sx={{mt:10}}>
+    <Page title="Personals | Home Page" sx={{mt:10, px:0.5}}>
       <HeaderSection />
       <Rewards />
       <Testimonies />
