@@ -4,29 +4,27 @@ import styles from '../../../styles/home.module.css'
 
 const HeaderSection = () => {
     return (
-        <Box sx={{ backgroundColor: '#ededed', mt: '-1.8rem', pt: 8, pb: 5 }}>
+        <Box className="primary_background" sx={{ mt: '-1.8rem', pt: 8, pb: 5 }}>
             <Box sx={{ textAlign: 'center' }}>
-                <Box>
+                <Box className="bold_primary_text_color">
                     <Typography variant='h2' className='oswald'
-                        sx={{ textAlign: 'center', fontWeight: 900, fontSize: '3rem', color: '#171720' }}>
-                        Save Money On</Typography>
+                        sx={{ textAlign: 'center', fontWeight: 900, fontSize: '3rem' }}>
+                        Keep Your Data</Typography>
                     <Typography variant='h2' className='oswald'
-                        sx={{ textAlign: 'center', fontWeight: 800, fontSize: '2.8rem', color: '#191924' }}>
-                        <Typography variant='span' sx={{ color: '#912483' }}>Everyday</Typography> Payments</Typography>
+                        sx={{ textAlign: 'center', fontWeight: 800, fontSize: '3rem' }}>
+                        <Typography variant='span' className='deep_primary_text_color'>Secrete</Typography> Forever</Typography>
                 </Box>
-                <Typography className='inconsolata' sx={{ mt: '2.5rem' }}>
-                    <span>Direcharge rewards you with cashbacks when</span><br />
-                    <span>you make payments for services and utilities.</span>
+                <Typography className='inconsolata' sx={{ mt: '2.5rem', fontSize:24 }}>
+                    <span>Personals helps you keep record of all your secrete pins, passwords, and card info's</span>
                 </Typography>
                 <Box className={styles.header_section_image_wrapper}>
                     <img className={styles.header_section_image} src='/static/app-preview.png' alt='personals logo' />
                 </Box>
-                <Typography variant='h2' sx={{ mt: '3rem', fontSize: '36px', fontWeight: '600' }}>
-                    Get more value for your <Typography variant='span' sx={{ color: '#912483' }}>money!</Typography>
+                <Typography variant='h2' className='bold_primary_text_color' sx={{ mt: '3rem', fontSize: '36px', fontWeight: '600' }}>
+                    Keep your personal data <Typography variant='span' className='deep_primary_text_color'>Secured!</Typography>
                 </Typography>
-                <Typography sx={{ px: '2rem' }}>
-                    Enjoy amazing cashbacks when you pay for services through
-                    the Direcharge app.
+                <Typography sx={{ px: '2rem', mt:1, fontSize:20, lineHeight:1.7 }}>
+                    Enjoy all amzing features personals have for you:
                 </Typography>
                 <Box sx={{ mt: '20px', display: 'flex', justifyContent: 'center' }}>
                     <Link to="https://play.google.com/store/apps/details?id=com.app.direcharge">
@@ -47,8 +45,8 @@ const HeaderSection = () => {
                             </svg>
                             </span>
                             <Box sx={{ lineHeight: 1.7 }}>
-                                <span className={styles.value_span_title_1}>Buy</span>
-                                <span className={styles.value_span_title_2}>Airtime</span>
+                                <span className={styles.value_span_title_1}>Save</span>
+                                <span className={styles.value_span_title_2}>Your Password</span>
                             </Box>
                         </Box>
                         <Box className={styles.value}>
@@ -58,8 +56,8 @@ const HeaderSection = () => {
                                 </g>
                             </svg>
                             </span>
-                            <Box sx={{ lineHeight: 1.7 }}><span className={styles.value_span_title_1}>Buy</span>
-                                <span className={styles.value_span_title_1}>Data</span>
+                            <Box sx={{ lineHeight: 1.7 }}><span className={styles.value_span_title_1}>Save</span>
+                                <span className={styles.value_span_title_2}>Card Number</span>
                             </Box>
                         </Box>
                     </Box>
@@ -71,16 +69,16 @@ const HeaderSection = () => {
                                 </g>
                             </svg>
                         </span>
-                            <Box sx={{ lineHeight: 1.7 }}><span className={styles.value_span_title_1}>Buy</span>
-                                <span className={styles.value_span_title_2}>Electricity</span>
+                            <Box sx={{ lineHeight: 1.7 }}><span className={styles.value_span_title_1}>Store</span>
+                                <span className={styles.value_span_title_2}>Secrete Tokens</span>
                             </Box>
                         </Box>
                         <Box className={styles.value}>
                             <span className={styles.value_span_1}>
                                 <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="20" width="20" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M8 2v20H4v-4H2v-2h2v-3H2v-2h2V8H2V6h2V2h4zm12.005 0C21.107 2 22 2.898 22 3.99v16.02c0 1.099-.893 1.99-1.995 1.99H10V2h10.005z"></path></g>
                                 </svg>
-                            </span><Box sx={{ lineHeight: 1.7 }}><span className={styles.value_span_title_1}>Buy</span>
-                                <span className={styles.value_span_title_2}>WAEC Pin</span>
+                            </span><Box sx={{ lineHeight: 1.7 }}><span className={styles.value_span_title_1}>Save</span>
+                                <span className={styles.value_span_title_2}>Accout Numbers</span>
                             </Box>
                         </Box>
                     </Box>
@@ -92,8 +90,8 @@ const HeaderSection = () => {
                                     </g>
                                 </svg>
                             </span>
-                            <Box sx={{ lineHeight: 1.7 }}><span className={styles.value_span_title_1}>Buy</span>
-                                <span className={styles.value_span_title_2}>Cable TV</span>
+                            <Box sx={{ lineHeight: 1.7 }}><span className={styles.value_span_title_1}>Share</span>
+                                <span className={styles.value_span_title_2}>with others</span>
                             </Box>
                         </Box>
                         <Box className={styles.value}><span className={styles.value_span_1}>
@@ -101,8 +99,8 @@ const HeaderSection = () => {
                                 <g><path fill="none" d="M0 0h24v24H0z">
                                 </path><path d="M12 .5l4.226 6.183 7.187 2.109-4.575 5.93.215 7.486L12 19.69l-7.053 2.518.215-7.486-4.575-5.93 7.187-2.109L12 .5zM10 12H8a4 4 0 0 0 7.995.2L16 12h-2a2 2 0 0 1-3.995.15L10 12z"></path>
                                 </g>
-                            </svg> </span><Box sx={{ lineHeight: 1.7 }}><span className={styles.value_span_title_1}>And</span>
-                                <span className={styles.value_span_title_2}>Loads More.
+                            </svg> </span><Box sx={{ lineHeight: 1.7 }}><span className={styles.value_span_title_1}>And Keep</span>
+                                <span className={styles.value_span_title_2}>Anything Secretive.
                                 </span>
                             </Box>
                         </Box>

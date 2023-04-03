@@ -20,8 +20,9 @@ import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import { APP_NAVS } from '../config';
 
 const drawerWidth = 240;
-
-const linkStyle = { textDecoration: 'none', fontSize: '1.55rem', color: '#3c3a3a' }
+const textColor = "white"
+const backgroundColor = '#807ed5'
+const linkStyle = { textDecoration: 'none', fontSize: '1.55rem', color: textColor }
 const linkListStyle = { borderBottom: '1px solid #ffffff5c' }
 
 
@@ -42,7 +43,7 @@ const Navbar = (props) => {
 
     const drawer = (
         <Box onClick={handleDrawerToggle}
-            sx={{ backgroundColor: '#dbdafb', color: '#3c3a3a', height: '100%', overflowX: 'hidden' }}>
+            sx={{ backgroundColor: backgroundColor, color: textColor, height: '100%', overflowX: 'hidden' }}>
             <Typography variant="h6" sx={{ my: 2, textAlign: 'center', fontSize: 20, fontWeight: 600 }}>
                 Personals
             </Typography>
@@ -62,7 +63,7 @@ const Navbar = (props) => {
                                 </Link>
                             })
                         }
-                        <Button sx={{ mt: 8, mx: 2, width: '90%' }} variant="contained"
+                        <Button sx={{ mt: 8, mx: 1, width: '90%', backgroundColor:'#243991' }} variant="contained"
                             onClick={logUserOut} endIcon={<PowerSettingsNewIcon />}>
                             Logout
                         </Button>
@@ -90,7 +91,7 @@ const Navbar = (props) => {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <AppBar component="nav" position='fixed' sx={{ backgroundColor:'#dbdafb', color:'#3c3a3a'}}>
+            <AppBar component="nav" position='fixed' sx={{ backgroundColor: backgroundColor, color: textColor }}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -113,17 +114,17 @@ const Navbar = (props) => {
                             loggedIn ? <>
                                 {
                                     APP_NAVS.filter(item => item.loggedIn === true || item.loggedIn === 'both')?.map((nav, i) => {
-                                        return <CustomLink to={`${nav.link}`} text={`${nav.text}`} key={i} />
+                                        return <CustomLink color={textColor} to={`${nav.link}`} text={`${nav.text}`} key={i} />
                                     })
                                 }
-                                <Button sx={{ mx: 1 }} variant="contained" onClick={logUserOut}>
+                                <Button sx={{ mx: 1, backgroundColor:'#243991' }} variant="contained" onClick={logUserOut}>
                                     Logout
                                 </Button>
                             </>
                                 : <>
                                     {
                                         APP_NAVS.filter(item => item.loggedIn === false)?.map((nav, i) => {
-                                            return <CustomLink to={`${nav.link}`} text={`${nav.text}`} key={i}  />
+                                            return <CustomLink color={textColor} to={`${nav.link}`} text={`${nav.text}`} key={i} />
                                         })
                                     }
                                 </>

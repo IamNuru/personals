@@ -50,19 +50,21 @@ a {
     width: 2.25rem;
     border-radius: 10px;
     margin-right: 1.5rem;
-    background-color: #912483;
+    background-color: #807ed5;
     color: white;
     padding-top: 0.25rem;
     text-align: center;
 }
 
 .value_span_title_1 {
-    font-weight: 700;
+    font-weight: 800;
     display: block;
+    font-size: 22px;
 }
 
 .value_span_title_2 {
     font-weight: 700;
+    color: #1a1a1a;
 }
 
 /* rewards styles */
@@ -97,7 +99,7 @@ a {
 .wrap_reward_svg {
     border-radius: 15px;
     margin-right: 0.5rem !important;
-    background-color: #912483;
+    background-color: #807ed5;
     padding-right: 0.25rem;
     padding-left: 0.5rem;
     padding-top: 7px;
@@ -130,7 +132,7 @@ a {
 
 
 .message_content {
-    background-color: #912483;
+    background-color: #807ed5;
     margin-left: 1rem;
     margin-right: 1rem;
     padding-top: 2rem;

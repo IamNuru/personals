@@ -10,25 +10,27 @@ const Rewards = () => {
             <Box className={styles.wrap_message}>
                 <img alt="user" src="/static/user.png" className={styles.wrap_reward_message_image} />
                 <Box className={styles.message_content}>
-                    <Typography variant='h1' sx={{ color: '#F4F4F4', fontSize: '1.17em', fontWeight: 'bold', lineHeight:1.65 }}>Fund once,<br />
-                        <Typography variant='span' sx={{ color: '#FAECF8', fontSize: '1.17em', fontWeight: 'bold', }}>then pay as you like.</Typography>
+                    <Typography variant='h1' sx={{ color: '#F4F4F4', fontSize: '1.17em', fontWeight: 'bold', lineHeight:1.65 }}>Create an account<br />
+                        <Typography variant='span' sx={{ color: '#FAECF8', fontSize: '1.17em', fontWeight: 'bold', }}>then store all your important personals</Typography>
                     </Typography>
                     <Typography sx={{ marginTop: '0.5rem', color: '#F4F4F4' }}>
-                        It's your personal wallet. Fund once, then pay bills like a boss. No irritating charges, no delays, no stories, only juicy cashbacks for using the Direcharge app.
+                        It's your personal database. Create an account, then keep record of all your data. Your data is secured and available to you only. You can edit, delete or share them with others. Easy and very reliable.
                     </Typography>
                 </Box>
             </Box>
             <Box className={styles.wrap_instant_reward}>
                 <Box sx={{ textAlign: 'left', mr: { sm: '4.5rem' } }}>
                     <Typography variant='h1' sx={{ fontSize: '1.875rem', fontWeight: 'bold' }}>
-                        <Typography variant='span' sx={{ color: '#912483', fontWeight: 'bold', lineHeight: 1.625 }}>Instant rewards</Typography> <br />on every transaction
+                        <Typography variant='span' className='deep_primary_text_color' sx={{fontWeight: 'bold', lineHeight: 1.625 }}>Save It</Typography> <br />In just one Click
                     </Typography>
-                    <Typography sx={{ mt: '1.5rem', mb:'2rem', color: '#191924' }}>We send real money to your Direcharge wallet Everytime you pay for services and utilities through the app.</Typography>
+                    <Typography sx={{ mt: '1.5rem', mb:'2rem', color: '#191924', lineHeight:1.65 }}>
+                        We keep your records intact and secured. All you need is to log into your account and access them. Just save your personals and let us keep it secured for you
+                    </Typography>
                     <Box sx={{ mt: '1.5rem' }}>
                         <Typography variant='span' className={styles.wrap_reward_svg}>
                             <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" color="white" style={{ color: 'white' }} height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M22 10v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V10h20zm0-2H2V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v4zm-7 8v2h4v-2h-4z"></path></g></svg>
                         </Typography>
-                        <Typography variant='span'>Withdraw It</Typography>
+                        <Typography variant='span'>Save It</Typography>
                     </Box>
                     <Box sx={{ my: '1.5rem' }}>
                         <Typography variant='span' className={styles.wrap_reward_svg}>
@@ -40,7 +42,7 @@ const Rewards = () => {
                                 </g>
                             </svg>
                         </Typography>
-                        <Typography variant='span'>Send It</Typography>
+                        <Typography variant='span'>Share It</Typography>
                     </Box>
                     <Box sx={{ my: '1.5rem' }}>
                         <Typography variant='span' className={styles.wrap_reward_svg}>
@@ -51,7 +53,7 @@ const Rewards = () => {
                                 </g>
                             </svg>
                         </Typography>
-                        <Typography variant='span'>Save It</Typography>
+                        <Typography variant='span'>Update it</Typography>
                     </Box>
                     <Box sx={{mt:'2rem'}}>
                         <Link style={{padding:'0 3px'}} to="https://play.google.com/store/apps/details?id=com.app.direcharge" target="_blank" className="css-11e3e6f">

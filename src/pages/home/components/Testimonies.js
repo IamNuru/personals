@@ -7,7 +7,7 @@ import { testimonies } from '../../../config';
 
 const Testimonies = () => {
     return (
-        <Box sx={{ mt: '2.5rem', backgroundColor: '#faecf8', py: 4 }}>
+        <Box sx={{ mt: '2.5rem', py: 4 }} className="primary_background">
             <style>
                 {
                     `.MuiCardHeader-content{
@@ -15,7 +15,9 @@ const Testimonies = () => {
                     }`
                 }
             </style>
-            <Typography variant='h1' sx={{ fontSize: '1.875rem', fontWeight: 'bold', mb: '2rem', textAlign: 'center' }}>Hear from people like <span style={{ color: '#912483' }}>you!</span></Typography>
+            <Typography variant='h1' className='bold_primary_text_color' 
+            sx={{ fontSize: '1.875rem', fontWeight: 'bold', mb: '2rem', textAlign: 'center' }}>
+                Hear from people like <span className='deep_primary_text_color'>you!</span></Typography>
             <Box>
                 <Carousel showArrows showThumbs={false} autoPlay infiniteLoop showStatus={false} >
                     {
