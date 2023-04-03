@@ -9,7 +9,7 @@ import Register from './pages/auth/Register'
 import ProtectedRoute from "./components/routes/ProtectedRoute"
 import VerifyOtp from "./pages/VerifyOtp"
 import Page404 from "./pages/erro-pages/Page404"
-import Home from "./pages/Home"
+import Home from "./pages/home/Home"
 
 const AppRoutes = () => {
   return (
