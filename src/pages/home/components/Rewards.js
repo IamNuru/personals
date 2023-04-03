@@ -10,7 +10,7 @@ const Rewards = () => {
             <Box className={styles.wrap_message}>
                 <img alt="user" src="/static/user.png" className={styles.wrap_reward_message_image} />
                 <Box className={styles.message_content}>
-                    <Typography variant='h1' sx={{ color: '#F4F4F4', fontSize: '1.17em', fontWeight: 'bold' }}>Fund once,<br />
+                    <Typography variant='h1' sx={{ color: '#F4F4F4', fontSize: '1.17em', fontWeight: 'bold', lineHeight:1.65 }}>Fund once,<br />
                         <Typography variant='span' sx={{ color: '#FAECF8', fontSize: '1.17em', fontWeight: 'bold', }}>then pay as you like.</Typography>
                     </Typography>
                     <Typography sx={{ marginTop: '0.5rem', color: '#F4F4F4' }}>
