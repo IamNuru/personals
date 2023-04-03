@@ -42,7 +42,7 @@ const Navbar = (props) => {
 
     const drawer = (
         <Box onClick={handleDrawerToggle}
-            sx={{ backgroundColor: '#faecf8', color: '#3c3a3a', height: '100%', overflowX: 'hidden' }}>
+            sx={{ backgroundColor: '#dbdafb', color: '#3c3a3a', height: '100%', overflowX: 'hidden' }}>
             <Typography variant="h6" sx={{ my: 2, textAlign: 'center', fontSize: 20, fontWeight: 600 }}>
                 Personals
             </Typography>
@@ -90,7 +90,7 @@ const Navbar = (props) => {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <AppBar component="nav" position='fixed' sx={{ backgroundColor:'#faecf8', color:'#3c3a3a'}}>
+            <AppBar component="nav" position='fixed' sx={{ backgroundColor:'#dbdafb', color:'#3c3a3a'}}>
                 <Toolbar>
                     <IconButton
                         color="inherit"

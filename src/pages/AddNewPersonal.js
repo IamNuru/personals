@@ -44,7 +44,7 @@ const AddNewPersonal = () => {
     })
     return (
         <Page title="Add New Personal" className="wrap-personal-form">
-            <form onSubmit={formik.handleSubmit} style={{ width: '100%' }}>
+            <form onSubmit={formik.handleSubmit} style={{ width: '100%', marginBottom:'4rem' }}>
                 <Box className="form-wrapper" sx={{ margin: '0 auto' }}>
                     <Typography component="h6"
                         sx={{ my: 1, fontSize: '1.65rem', color: '#389BD9', textAlign: 'center' }}

@@ -89,3 +89,7 @@ img{
     border-radius: clamp(0px, (100vw - 750px) * 9999, 10px) !important;
     background-color: white !important;
 }
+
+.testimony-card{
+    
+}

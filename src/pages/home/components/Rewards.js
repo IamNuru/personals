@@ -26,13 +26,13 @@ const Rewards = () => {
                     <Typography sx={{ mt: '1.5rem', mb:'2rem', color: '#191924' }}>We send real money to your Direcharge wallet Everytime you pay for services and utilities through the app.</Typography>
                     <Box sx={{ mt: '1.5rem' }}>
                         <Typography variant='span' className={styles.wrap_reward_svg}>
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" color="white" style={{ color: 'white' }} height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M22 10v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V10h20zm0-2H2V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v4zm-7 8v2h4v-2h-4z"></path></g></svg>
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" color="white" style={{ color: 'white' }} height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M22 10v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V10h20zm0-2H2V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v4zm-7 8v2h4v-2h-4z"></path></g></svg>
                         </Typography>
                         <Typography variant='span'>Withdraw It</Typography>
                     </Box>
                     <Box sx={{ my: '1.5rem' }}>
                         <Typography variant='span' className={styles.wrap_reward_svg}>
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" color="white" style={{ color: 'white' }} height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" color="white" style={{ color: 'white' }} height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                 <g>
                                     <path fill="none" d="M0 0h24v24H0z"></path>
                                     <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
@@ -44,7 +44,7 @@ const Rewards = () => {
                     </Box>
                     <Box sx={{ my: '1.5rem' }}>
                         <Typography variant='span' className={styles.wrap_reward_svg}>
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" color="white" style={{ color: 'white' }} height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" color="white" style={{ color: 'white' }} height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                 <g>
                                     <path fill="none" d="M0 0h24v24H0z"></path>
                                     <path d="M22 6h-7a6 6 0 1 0 0 12h7v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2zm-7 2h8v8h-8a4 4 0 1 1 0-8zm0 3v2h3v-2h-3z"></path>
