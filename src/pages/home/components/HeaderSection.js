@@ -12,7 +12,7 @@ const HeaderSection = () => {
                         Keep Your Data</Typography>
                     <Typography variant='h2' className='oswald'
                         sx={{ textAlign: 'center', fontWeight: 800, fontSize: '3rem' }}>
-                        <Typography variant='span' className='deep_primary_text_color'>Secrete</Typography> Forever</Typography>
+                        <Typography variant='span' className='deep_primary_text_color'>Secret</Typography> Forever</Typography>
                 </Box>
                 <Typography className='inconsolata' sx={{ mt: '2.5rem', fontSize:24 }}>
                     <span>Personals helps you keep record of all your secrete pins, passwords, and card info's</span>

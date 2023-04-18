@@ -63,12 +63,12 @@ const Personal = ({ personal }) => {
         return 'No personal'
     }
     return (
-        <Box sx={{ mb: 4 }}>
+        <Box sx={{ mb: 6 }}>
             <label className='label'>{personal.title}</label>
 
             <Card sx={{
-                minHeight: 30, py: 2, backgroundColor: '#daf9f672'
-            }} elevation={3}>
+                minHeight: 20, py: 1.2,
+            }} elevation={2}>
                 {
                     width < 600 &&
                     <Box sx={{ float: 'right' }}>

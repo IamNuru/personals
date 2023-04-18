@@ -6,8 +6,8 @@ const Footer = () => {
         <section className={styles.footer}>
             <div className={styles.footer_container}>
                 <div className={styles.footer_container_top}>
-                    <h3 style={{ color: 'white', marginBottom: '16px' }}>
-                        <img src="/static/logo-footer.png" alt="personals's white logo" style={{ width: '200px' }} />
+                    <h3 style={{ color: 'white', marginBottom: '16px', fontSize:'2rem' }}>
+                        Personals
                     </h3>
                     <div className={styles.footer_links}>
                         <a style={{ cursor: 'pointer', textdecoration: 'none', color: "#fff" }} href="/about">About Us</a>

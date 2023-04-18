@@ -1,8 +1,8 @@
 .label {
-    color: #6B6C6C;
+    color: #a6a6a6;
     font-family: Roboto, Helvetica, Arial, sans-serif;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1.002rem;
     letter-spacing: 0.00938em;
     padding: 0px;
     display: block;
@@ -11,12 +11,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     margin-left: 14px;
-    margin-bottom: -17px;
-    z-index: 1;
-    position: relative;
-    pointer-events: auto;
+    margin-bottom: 4px;
     user-select: none;
-    background-color: white;
     width: max-content;
     padding: 0 3px;
 
