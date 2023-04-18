@@ -60,7 +60,7 @@ const Personal = ({ personal }) => {
 
 
     if (!personal) {
-        return 'No personal'
+        return 'No Personal Found'
     }
     return (
         <Box sx={{ mb: 6, mx:1 }}>
