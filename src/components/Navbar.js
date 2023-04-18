@@ -22,7 +22,7 @@ import { APP_NAVS } from '../config';
 const drawerWidth = 240;
 const textColor = "white"
 const backgroundColor = '#807ed5'
-const linkStyle = { textDecoration: 'none', fontSize: '1.55rem', color: textColor }
+const linkStyle = { textDecoration: 'none', fontSize: '1.15rem', color: textColor }
 const linkListStyle = { borderBottom: '1px solid #ffffff5c' }
 
 

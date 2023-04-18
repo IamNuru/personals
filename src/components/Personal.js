@@ -63,7 +63,7 @@ const Personal = ({ personal }) => {
         return 'No personal'
     }
     return (
-        <Box sx={{ mb: 6 }}>
+        <Box sx={{ mb: 6, mx:1 }}>
             <label className='label'>{personal.title}</label>
 
             <Card sx={{
