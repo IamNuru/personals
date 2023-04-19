@@ -96,7 +96,8 @@ const EditPersonalModal = ({ open, setOpen, personal }) => {
                                 <Button
                                     variant="contained"
                                     onClick={() => setOpen(false)}
-                                    sx={{ backgroundColor: '#ec563bed', color: 'white', minWidth:'10rem', fontSize: '1.2rem', fontWeight: 500, py: 1.2, mt: 6 }}
+                                    sx={{ backgroundColor: '#ec563bed', color: 'white', minWidth:{xs:'3rem', sm:'5rem', md:'10rem'}, fontSize: {xs:'0.85rem', sm:'1rem', md:'1.2rem'}, fontWeight: 500, py: 1.2, mt: 6 }}
+                                    
                                 >
                                     Cancel
                                 </Button>
@@ -104,8 +105,8 @@ const EditPersonalModal = ({ open, setOpen, personal }) => {
                                     variant="contained"
                                     disabled={!isEmptyObject(formik.errors)}
                                     type="submit"
-                                    sx={{ backgroundColor: '#389BD9', color: 'white', minWidth:'10rem', fontSize: '1.2rem', fontWeight: 600, py: 1.2, mt: 6 }}
-
+                                    sx={{ backgroundColor: '#389BD9', color: 'white', minWidth:{xs:'3rem', sm:'5rem', md:'10rem'}, fontSize: {xs:'0.85rem', sm:'1rem', md:'1.2rem'}, fontWeight: 600, py: 1.2, mt: 6 }}
+                                    
                                 >
                                     {formik.isSubmitting ? (
                                         <CircularProgress size={30} color="secondary" />

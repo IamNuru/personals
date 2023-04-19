@@ -18,7 +18,7 @@ const HeaderSection = () => {
                     <span>Personals helps you keep record of all your secrete pins, passwords, and card info's</span>
                 </Typography>
                 <Box className={styles.header_section_image_wrapper}>
-                    <img className={styles.header_section_image} src='/static/app-preview.png' alt='personals logo' />
+                    <img className={styles.header_section_image} src='/hero-image.webp' alt='personals logo' />
                 </Box>
                 <Typography variant='h2' className='bold_primary_text_color' sx={{ mt: '3rem', fontSize: '36px', fontWeight: '600' }}>
                     Keep your personal data <Typography variant='span' className='deep_primary_text_color'>Secured!</Typography>

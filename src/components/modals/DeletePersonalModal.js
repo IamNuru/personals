@@ -19,7 +19,7 @@ const DeletePersonalModal = ({ open, setOpen, personal, setSuccess }) => {
                 <Typography sx={{ fontWeight: 600, fontSize: '1.4rem' }}>Comfirm Delete Personal</Typography>
                 <Typography>You are about to delete personal with title
                     <Typography sx={{ fontWeight: 600, fontSize: '1rem', px: 1 }}>{personal?.title}</Typography> </Typography>
-                <Box sx={{display:'flex', justifyContent:'space-between', mx:2}}>
+                <Box sx={{display:'flex', justifyContent:'space-between'}}>
                 <Button color="danger" variant="contained" sx={{
                     display: 'grid', justifyContent: 'center',
                     mx: 'auto', mt: 4, backgroundColor: '#fddd94fc', border: 'red',

@@ -8,7 +8,7 @@ const Rewards = () => {
     return (
         <Box className={styles.rewards_wrapper}>
             <Box className={styles.wrap_message}>
-                <img alt="user" src="/static/user.png" className={styles.wrap_reward_message_image} />
+                <img alt="user" src="/hero1.png" className={styles.wrap_reward_message_image} />
                 <Box className={styles.message_content}>
                     <Typography variant='h1' sx={{ color: '#F4F4F4', fontSize: 24, fontWeight: 'bold', lineHeight:1.65 }}>Create an Account,<br />
                         <Typography variant='span' sx={{ color: '#FAECF8', fontSize: '1.17em', fontWeight: 'bold', }}>then store all your important personals.</Typography>
@@ -64,7 +64,7 @@ const Rewards = () => {
                         </Link>
                     </Box>
                 </Box>
-                <img alt="user" src="/static/d-image-2.png" style={{ width: '100%' }} />
+                <img alt="user" src="/static/personals.avif" style={{ width: '100%' }} />
             </Box>
         </Box >
     )

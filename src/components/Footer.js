@@ -17,7 +17,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className={styles.footer_container_bottom}>
-                    <p className={styles.copy_right}>Â© 2023 Personals. All rights reserved</p>
+                    <p className={styles.copy_right}>© 2023 Personals. All rights reserved</p>
                     <div className={styles.social}>
                         <a href="https://instagram.com/personals" target="_blank" rel='noreferrer' className={styles.social_link_anchor}>
                             <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" color="white" style={{color:'white'}} height="20" width="20" xmlns="http://www.w3.org/2000/svg">

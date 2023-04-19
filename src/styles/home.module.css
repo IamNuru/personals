@@ -5,7 +5,7 @@ a {
 
 .header_section_image_wrapper {
     margin-top: 2rem;
-    height: 80px;
+    height: 200px;
     width: 100vw;
     overflow: hidden;
 }
@@ -128,6 +128,7 @@ a {
     position: absolute;
     height: 300px;
     display: none;
+    width: 250px;
 }
 
 
@@ -209,7 +210,7 @@ a {
 @media screen and (min-width: 640px) {
     .header_section_image_wrapper {
         margin-top: 3.5rem;
-        height: 260px;
+        height: 350px;
         width: 100%;
         overflow: hidden;
     }
